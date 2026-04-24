@@ -5,7 +5,7 @@ export const BRAND = {
   description: 'We build high-performing websites, landing pages, ecommerce stores, and AI-powered experiences that help businesses grow online.',
   email: 'hello@devarea.com',
   phone: '+1 (555) 123-4567',
-  address: 'San Francisco, CA',
+  address: 'Tiwari Ganj, Near BBD University, Lucknow',
   social: {
     twitter: 'https://twitter.com/devarea',
     linkedin: 'https://linkedin.com/company/devarea',

@@ -1,147 +1,364 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, Phone, MapPin, Send } from 'lucide-react'
 import { BRAND } from '@/lib/constants'
+import { WhatsAppButton } from '@/components/sections/WhatsAppButton'
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    service: '',
+    message: '',
+  })
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: 'easeOut' },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.5 },
+    },
+  }
+
   return (
-    <main className="flex flex-col w-full">
-      {/* Hero */}
-      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 pt-32">
-        <div className="max-w-7xl mx-auto text-center">
+    <main className="flex flex-col w-full overflow-hidden">
+      {/* Hero Section */}
+      <section className="w-full relative pt-32 pb-16 sm:pb-20 lg:pb-28 px-4">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/50 -z-10" />
+
+        <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                Let's Talk
+            <span className="inline-block mb-4 px-4 py-2 bg-green-100/60 text-green-700 rounded-full text-sm font-semibold backdrop-blur-sm">
+              ⚡ Fastest Response on WhatsApp
+            </span>
+
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Get Your Business Website in 3–5 Days
               </span>
             </h1>
-            <p className="text-xl text-light-text max-w-2xl mx-auto mb-8">
-              Ready to grow your business? Get in touch with our team.
+
+            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-2 leading-relaxed font-semibold">
+              Free demo • Starting from ₹2,999 • No upfront payment
             </p>
+
+            <p className="text-sm text-gray-500 max-w-xl mx-auto mb-10">
+              💚 We respond within 10–30 minutes on WhatsApp
+            </p>
+
+            {/* Trust Badges */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 max-w-2xl mx-auto">
+              {[
+                { icon: '✔', text: 'No upfront payment' },
+                { icon: '✔', text: 'Free demo before payment' },
+                { icon: '✔', text: 'Fast delivery in 3–5 days' },
+                { icon: '✔', text: 'Mobile-friendly design' },
+              ].map((badge, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="text-xs sm:text-sm text-gray-700"
+                >
+                  <span className="text-green-600 font-bold">{badge.icon}</span> {badge.text}
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Primary CTA - WhatsApp */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <WhatsAppButton type="demo" variant="default" size="lg" />
+              <motion.button
+                whileHover={{ y: -2 }}
+                onClick={() =>
+                  document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })
+                }
+                className="px-8 py-4 bg-gray-100 text-gray-700 rounded-lg font-semibold hover:bg-gray-200 transition-all"
+              >
+                Prefer form? Share below
+              </motion.button>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact Form & Info */}
-      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-white/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Info */}
+      {/* Main Contact Section */}
+      <section id="contact-form" className="w-full py-20 sm:py-28 lg:py-32 px-4 sm:px-6 pb-32 sm:pb-40">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 sm:mb-14 lg:mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Get In Touch With Us
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              We're here to help you build the perfect website for your business
+            </p>
+          </motion.div>
+
+          {/* Two Card Grid - Equal Height */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 auto-rows-fr">
+            {/* LEFT CARD - Contact Information */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="space-y-8"
+              className="relative rounded-3xl overflow-hidden h-full flex flex-col"
             >
-              <div>
-                <h2 className="text-3xl font-bold text-light-heading mb-8">Get in Touch</h2>
-              </div>
+              {/* Card Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white via-white/95 to-gray-50/95 backdrop-blur-xl" />
+              <div className="absolute inset-0 border border-white/40 rounded-3xl" />
+              <div className="absolute inset-0 shadow-2xl shadow-indigo-500/10 rounded-3xl" />
 
-              {[
-                { icon: Mail, label: 'Email', value: BRAND.email, href: `mailto:${BRAND.email}` },
-                { icon: Phone, label: 'Phone', value: BRAND.phone, href: `tel:${BRAND.phone}` },
-                { icon: MapPin, label: 'Location', value: BRAND.address, href: '#' },
-              ].map((contact, index) => (
-                <motion.a
-                  key={index}
-                  href={contact.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+              {/* Card Content */}
+              <div className="relative p-8 sm:p-10 lg:p-12 flex flex-col h-full">
+                {/* Header */}
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Let's Connect</h3>
+                <p className="text-gray-600 text-sm mb-8">Choose your preferred way to reach us</p>
+
+                {/* Contact Cards */}
+                <div className="space-y-4 mb-8 flex-shrink-0">
+                  {[
+                    {
+                      icon: Mail,
+                      label: 'Email',
+                      value: BRAND.email,
+                      href: `mailto:${BRAND.email}`,
+                      color: 'from-blue-500/10 to-cyan-500/10',
+                      borderColor: 'border-blue-200/50',
+                      iconColor: 'text-blue-600',
+                    },
+                    {
+                      icon: Phone,
+                      label: 'WhatsApp (Fastest)',
+                      value: BRAND.phone,
+                      href: `tel:${BRAND.phone}`,
+                      color: 'from-green-500/10 to-emerald-500/10',
+                      borderColor: 'border-green-200/50',
+                      iconColor: 'text-green-600',
+                      highlight: true,
+                    },
+                    {
+                      icon: MapPin,
+                      label: 'Location',
+                      value: BRAND.address,
+                      href: '#',
+                      color: 'from-purple-500/10 to-pink-500/10',
+                      borderColor: 'border-purple-200/50',
+                      iconColor: 'text-purple-600',
+                    },
+                  ].map((contact, index) => (
+                    <motion.a
+                      key={index}
+                      href={contact.href}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.02, x: 4 }}
+                      className={`group/card flex items-center gap-4 p-5 rounded-2xl border backdrop-blur-sm transition-all duration-300 ${contact.color} ${contact.borderColor} hover:border-opacity-100 cursor-pointer ${
+                        contact.highlight ? 'ring-2 ring-green-300/30' : ''
+                      }`}
+                    >
+                      <div
+                        className={`p-3 rounded-xl bg-white/60 group-hover/card:bg-white transition-all flex-shrink-0 ${contact.iconColor}`}
+                      >
+                        <contact.icon className="w-5 h-5" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs text-gray-600 font-medium">{contact.label}</p>
+                        <p className="text-sm font-semibold text-gray-900 truncate">{contact.value}</p>
+                      </div>
+                    </motion.a>
+                  ))}
+                </div>
+
+                {/* Fast Response Box - Pushed to bottom */}
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-4 p-6 bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-200 rounded-xl hover:border-indigo-400 transition-all"
+                  className="mt-auto p-6 rounded-2xl bg-gradient-to-br from-green-50/80 to-emerald-50/80 border border-green-200/60 flex-shrink-0"
                 >
-                  <contact.icon className="w-6 h-6 text-indigo-600" />
-                  <div>
-                    <p className="text-light-text text-sm">{contact.label}</p>
-                    <p className="text-light-heading font-semibold">{contact.value}</p>
-                  </div>
-                </motion.a>
-              ))}
-
-              <div className="pt-8 border-t border-light-border">
-                <h3 className="text-light-heading font-semibold mb-4">Response Time</h3>
-                <p className="text-light-text">We typically respond within 24 hours on weekdays.</p>
+                  <p className="text-sm font-bold text-green-700 mb-2">⚡ Fast Response Guaranteed</p>
+                  <p className="text-xs text-green-700 leading-relaxed">
+                    We respond within 10–30 minutes on WhatsApp. No upfront payment required until
+                    you approve the demo.
+                  </p>
+                </motion.div>
               </div>
             </motion.div>
 
-            {/* Contact Form */}
+            {/* RIGHT CARD - Contact Form */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
+              initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="p-8 bg-gradient-to-br from-white to-gray-50 border border-light-border rounded-xl"
+              className="relative rounded-3xl overflow-hidden h-full flex flex-col"
             >
-              <form className="space-y-6" action="/api/contact" method="POST">
-                <div>
-                  <label className="block text-light-heading font-semibold mb-2">Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    className="w-full px-4 py-3 bg-white border border-light-border rounded-lg text-light-heading placeholder-light-text focus:border-indigo-600 focus:outline-none transition-colors"
-                    placeholder="Your name"
-                  />
+              {/* Card Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white via-white/95 to-gray-50/95 backdrop-blur-xl" />
+              <div className="absolute inset-0 border border-white/40 rounded-3xl" />
+              <div className="absolute inset-0 shadow-2xl shadow-indigo-500/10 rounded-3xl" />
+
+              {/* Card Content */}
+              <div className="relative p-8 sm:p-10 lg:p-12 flex flex-col h-full">
+                {/* Header */}
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Prefer to Fill a Form?</h3>
+                <p className="text-gray-600 text-sm mb-6">Share your details below. WhatsApp is faster.</p>
+
+                {/* Tip Box */}
+                <div className="p-4 bg-green-50/80 border border-green-200/60 rounded-xl mb-8 flex-shrink-0">
+                  <p className="text-xs text-green-700 font-medium">
+                    💡 Tip: WhatsApp chat gets you free demo first, payment only after approval.
+                  </p>
                 </div>
 
-                <div>
-                  <label className="block text-light-heading font-semibold mb-2">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 bg-white border border-light-border rounded-lg text-light-heading placeholder-light-text focus:border-indigo-600 focus:outline-none transition-colors"
-                    placeholder="your@email.com"
-                  />
-                </div>
+                {/* Form - Scrollable on overflow */}
+                <form className="space-y-5 flex-1 overflow-y-auto pr-1" action="/api/contact" method="POST">
+                  {/* Full Name */}
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">
+                      Full Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      placeholder="John Doe"
+                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl transition-all duration-300 focus:outline-none focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:shadow-lg focus:shadow-indigo-500/10"
+                    />
+                  </div>
 
-                <div>
-                  <label className="block text-light-heading font-semibold mb-2">Service</label>
-                  <select
-                    name="service"
-                    className="w-full px-4 py-3 bg-white border border-light-border rounded-lg text-light-heading focus:border-indigo-600 focus:outline-none transition-colors"
+                  {/* Phone */}
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      placeholder="+91 9876543210"
+                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl transition-all duration-300 focus:outline-none focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:shadow-lg focus:shadow-indigo-500/10"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="you@example.com"
+                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl transition-all duration-300 focus:outline-none focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:shadow-lg focus:shadow-indigo-500/10"
+                    />
+                  </div>
+
+                  {/* Service */}
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">
+                      What do you need?
+                    </label>
+                    <select
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl transition-all duration-300 focus:outline-none focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:shadow-lg focus:shadow-indigo-500/10"
+                    >
+                      <option value="">Select a service (optional)</option>
+                      <option value="business-website">Business Website (₹2999)</option>
+                      <option value="landing-pages">Landing Page</option>
+                      <option value="ecommerce">E-commerce Store</option>
+                      <option value="ui-ux-design">UI/UX Design</option>
+                      <option value="other">Something Else</option>
+                    </select>
+                  </div>
+
+                  {/* Message */}
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-900 mb-2">
+                      Tell us about your project *
+                    </label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows={3}
+                      placeholder="Describe your business, goals, and any specific requirements..."
+                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl resize-none transition-all duration-300 focus:outline-none focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:shadow-lg focus:shadow-indigo-500/10"
+                    />
+                  </div>
+                </form>
+
+                {/* Button Section - Always visible at bottom */}
+                <div className="mt-6 pt-6 border-t border-gray-200/30 flex-shrink-0 space-y-4">
+                  <motion.button
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="submit"
+                    className="w-full py-3.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/40 flex items-center justify-center gap-2 group"
                   >
-                    <option value="">Select a service</option>
-                    <option value="web-development">Web Development</option>
-                    <option value="ui-ux-design">UI/UX Design</option>
-                    <option value="landing-pages">Landing Pages</option>
-                    <option value="ecommerce">Ecommerce</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
+                    <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    Send Details
+                  </motion.button>
 
-                <div>
-                  <label className="block text-light-heading font-semibold mb-2">Message</label>
-                  <textarea
-                    name="message"
-                    rows={5}
-                    required
-                    className="w-full px-4 py-3 bg-white border border-light-border rounded-lg text-light-heading placeholder-light-text focus:border-indigo-600 focus:outline-none transition-colors resize-none"
-                    placeholder="Tell us about your project..."
-                  />
+                  {/* Helper Text */}
+                  <p className="text-xs text-gray-500 text-center">
+                    We'll review and respond within 24 hours. Or use WhatsApp for instant chat.
+                  </p>
                 </div>
-
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  className="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-indigo-500/40 transition-all"
-                >
-                  Send Message
-                </motion.button>
-              </form>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
+
+
     </main>
   )
 }
