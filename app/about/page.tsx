@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import {
   Lightbulb,
   Users,
@@ -184,14 +185,16 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative h-96 lg:h-full min-h-96 bg-gradient-to-br from-indigo-600/10 to-purple-600/10 rounded-2xl border border-indigo-500/20 flex items-center justify-center overflow-hidden"
+              className="relative w-full h-96 lg:h-full min-h-96 rounded-2xl overflow-hidden"
             >
-              <motion.div
-                animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-              >
-                <Users className="w-40 h-40 text-indigo-600 opacity-20" />
-              </motion.div>
+              <Image
+                src="/images/about.png"
+                alt="DevArea Team"
+                fill
+                className="object-contain"
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
             </motion.div>
           </div>
         </div>

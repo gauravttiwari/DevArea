@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Check, Star, TrendingUp, Zap, Shield } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, Check, Star, TrendingUp, Zap, Shield, Code2, Palette, MessageCircle } from 'lucide-react'
 import { BRAND, SERVICES, TESTIMONIALS, CASE_STUDIES, FAQ, PRICING, BLOG_POSTS } from '@/lib/constants'
 import { generateOrganizationSchema, generateFAQSchema } from '@/lib/schema'
 
@@ -24,12 +25,12 @@ export default function Home() {
 
       <main className="flex flex-col w-full bg-light-bg">
         {/* Hero Section */}
-        <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-12 sm:pb-20 px-4 bg-light-bg">
+        <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-12 sm:pb-20 px-4 bg-light-bg dark:bg-dark-bg">
           {/* Background Elements */}
           <div className="absolute inset-0 -z-10">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-2 animate-blob" />
-            <div className="absolute top-40 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-2 animate-blob animation-delay-2000" />
-            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-2 animate-blob animation-delay-4000" />
+            <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-blob" />
+            <div className="absolute top-40 right-10 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-blob animation-delay-2000" />
+            <div className="absolute -bottom-8 left-20 w-72 h-72 bg-red-300 rounded-full mix-blend-multiply filter blur-3xl opacity-5 animate-blob animation-delay-4000" />
           </div>
 
           <div className="max-w-7xl mx-auto w-full">
@@ -40,18 +41,18 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 bg-indigo-100 border border-indigo-300 rounded-full">
-                  <Star className="w-4 h-4 text-indigo-600" />
-                  <span className="text-sm text-indigo-700 font-medium">Award-winning digital agency</span>
+                <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 border border-yellow-300 dark:border-yellow-700/50 rounded-full">
+                  <Star className="w-4 h-4 text-yellow-600 dark:text-yellow-400" />
+                  <span className="text-sm text-yellow-700 dark:text-yellow-300 font-medium">Award-winning digital agency</span>
                 </div>
 
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-light-heading">
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-light-text dark:text-white">
                   Build 
-                  <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"> Websites </span>
+                  <span className="bg-gradient-to-r from-yellow-600 to-orange-600 dark:from-yellow-400 dark:to-orange-400 bg-clip-text text-transparent"> Websites </span>
                   That Convert
                 </h1>
 
-                <p className="text-lg sm:text-xl text-light-text mb-8 max-w-2xl leading-relaxed">
+                <p className="text-lg sm:text-xl text-light-text-secondary dark:text-dark-text-secondary mb-8 max-w-2xl leading-relaxed">
                   We design and develop premium websites, landing pages, and ecommerce stores that drive measurable growth. With strategic design, technical SEO, and AI integration, we help businesses dominate their markets.
                 </p>
 
@@ -60,7 +61,7 @@ export default function Home() {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-indigo-500/40 transition-all flex items-center gap-2"
+                      className="px-8 py-4 bg-yellow-400 hover:bg-yellow-500 text-black rounded-lg font-semibold hover:shadow-lg hover:shadow-yellow-400/40 transition-all flex items-center gap-2"
                     >
                       Start Your Project <ArrowRight className="w-5 h-5" />
                     </motion.button>
@@ -69,20 +70,20 @@ export default function Home() {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-8 py-4 border-2 border-indigo-500/30 text-indigo-300 rounded-lg font-semibold hover:bg-indigo-500/10 transition-all"
+                      className="px-8 py-4 border-2 border-yellow-400/50 dark:border-yellow-600/50 text-light-accent dark:text-yellow-400 rounded-lg font-semibold hover:bg-yellow-50 dark:hover:bg-yellow-500/10 transition-all"
                     >
                       View Our Work
                     </motion.button>
                   </Link>
                 </div>
 
-                <div className="flex gap-6 text-sm text-light-text">
+                <div className="flex gap-6 text-sm text-light-text-secondary dark:text-dark-text-secondary">
                   <div className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-green-600" />
+                    <Check className="w-5 h-5 text-green-600 dark:text-green-400" />
                     <span>50+ Successful Projects</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-green-600" />
+                    <Check className="w-5 h-5 text-green-600 dark:text-green-400" />
                     <span>Fast Turnaround</span>
                   </div>
                 </div>
@@ -95,11 +96,15 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="relative h-96 lg:h-full min-h-96"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl border border-indigo-300 backdrop-blur-sm flex items-center justify-center">
-                  <div className="text-center text-light-text">
-                    <Zap className="w-16 h-16 mx-auto mb-4 text-indigo-600" />
-                    <p className="font-semibold">Premium Digital Solutions</p>
-                  </div>
+                <div className="absolute inset-0 rounded-2xl flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/images/premium-solutions.png"
+                    alt="Premium Digital Solutions - Laptop and Phone Mockup"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 100vw"
+                    className="object-cover object-center"
+                    priority
+                  />
                 </div>
               </motion.div>
             </div>
@@ -107,42 +112,119 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-dark-900/50">
+        <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-light-bg dark:bg-dark-bg">
           <div className="max-w-7xl mx-auto">
-            <div className="mb-12 sm:mb-20">
-              <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                  Our Services
-                </span>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mb-16"
+            >
+              <h2 className="text-4xl sm:text-5xl font-bold text-light-text dark:text-white mb-4">
+                Our Services
               </h2>
-              <p className="text-xl text-light-text max-w-2xl">
+              <p className="text-lg text-light-text-secondary dark:text-dark-text-secondary max-w-2xl">
                 End-to-end digital solutions designed to help businesses grow online
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {SERVICES.map((service, index) => (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Link href={service.href}>
-                    <div className="group p-8 bg-gradient-to-br from-dark-800 to-dark-900 border border-white/10 rounded-xl hover:border-indigo-500/50 transition-all duration-300 cursor-pointer hover:shadow-xl hover:shadow-indigo-500/10 h-full">
-                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.color} p-2.5 mb-4 group-hover:scale-110 transition-transform`}>
-                        <Zap className="w-full h-full text-white" />
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                      <p className="text-light-text mb-4">{service.description}</p>
-                      <div className="flex items-center text-indigo-400 font-semibold">
-                        Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+              {/* Web Development */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+              >
+                <Link href="/services#web-development">
+                  <div className="group h-full p-8 bg-white dark:bg-dark-card rounded-2xl border border-light-border dark:border-dark-border hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden relative">
+                    <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-orange-500 to-red-600 opacity-5 rounded-full group-hover:opacity-10 transition-opacity" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                      <Code2 className="w-8 h-8 text-white" />
                     </div>
-                  </Link>
-                </motion.div>
-              ))}
+                    <h3 className="text-2xl font-bold text-light-text dark:text-white mb-3">Web Development</h3>
+                    <p className="text-light-text-secondary dark:text-dark-text-secondary mb-4 leading-relaxed">Custom websites built with modern technology, responsive design, and conversion optimization</p>
+                    <div className="flex items-center text-orange-600 dark:text-orange-400 font-semibold group-hover:translate-x-2 transition-transform">
+                      <span>Learn More</span>
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* UI/UX Design */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+              >
+                <Link href="/services#uiux-design">
+                  <div className="group h-full p-8 bg-white dark:bg-dark-card rounded-2xl border border-light-border dark:border-dark-border hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden relative">
+                    <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-blue-500 to-blue-600 opacity-5 rounded-full group-hover:opacity-10 transition-opacity" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                      <Palette className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-light-text dark:text-white mb-3">UI/UX Design</h3>
+                    <p className="text-light-text-secondary dark:text-dark-text-secondary mb-4 leading-relaxed">Beautiful, user-centered interfaces that improve engagement and drive conversions</p>
+                    <div className="flex items-center text-blue-600 dark:text-blue-400 font-semibold group-hover:translate-x-2 transition-transform">
+                      <span>Learn More</span>
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* Landing Pages */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+              >
+                <Link href="/services#landing-pages">
+                  <div className="group h-full p-8 bg-white dark:bg-dark-card rounded-2xl border border-light-border dark:border-dark-border hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden relative">
+                    <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-green-500 to-emerald-600 opacity-5 rounded-full group-hover:opacity-10 transition-opacity" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                      <Zap className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-light-text dark:text-white mb-3">Landing Pages</h3>
+                    <p className="text-light-text-secondary dark:text-dark-text-secondary mb-4 leading-relaxed">High-converting landing pages designed to capture leads and drive specific actions</p>
+                    <div className="flex items-center text-green-600 dark:text-green-400 font-semibold group-hover:translate-x-2 transition-transform">
+                      <span>Learn More</span>
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+
+              {/* AI Chatbot */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8 }}
+              >
+                <Link href="/services#ai-chatbot">
+                  <div className="group h-full p-8 bg-white dark:bg-dark-card rounded-2xl border border-light-border dark:border-dark-border hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden relative">
+                    <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-pink-500 to-rose-600 opacity-5 rounded-full group-hover:opacity-10 transition-opacity" />
+                    <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                      <MessageCircle className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-light-text dark:text-white mb-3">AI Chatbot</h3>
+                    <p className="text-light-text-secondary dark:text-dark-text-secondary mb-4 leading-relaxed">Smart AI-powered chatbots for 24/7 customer support and lead qualification</p>
+                    <div className="flex items-center text-pink-600 dark:text-pink-400 font-semibold group-hover:translate-x-2 transition-transform">
+                      <span>Learn More</span>
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
             </div>
           </div>
         </section>

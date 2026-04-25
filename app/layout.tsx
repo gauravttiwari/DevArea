@@ -3,7 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { WhatsAppFloatingButton } from "@/components/sections/WhatsAppFloatingButton";
+import { ExitIntentPopup } from "@/components/sections/ExitIntentPopup";
 import { SEO } from "@/lib/constants";
 
 const geistSans = Geist({
@@ -57,11 +59,17 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#F8FAFC" />
       </head>
-      <body className="min-h-screen flex flex-col bg-light-bg text-light-heading">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppFloatingButton type="default" position="bottom-right" />
+      <body className="min-h-screen flex flex-col bg-light-bg dark:bg-black text-light-heading dark:text-white">
+        <ThemeProvider>
+          <Navbar />
+          <main className="flex-1 pt-20">{children}</main>
+          <Footer />
+          <WhatsAppFloatingButton type="default" position="bottom-right" />
+          <ExitIntentPopup 
+            whatsappNumber="919876543210"
+            whatsappMessage="Hi, mujhe website development ke baare mein details chahiye"
+          />
+        </ThemeProvider>
       </body>
     </html>
   );

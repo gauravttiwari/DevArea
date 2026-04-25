@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,35 +9,34 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c3d66',
-        },
-        dark: {
-          50: '#f9fafb',
-          100: '#f3f4f6',
-          200: '#e5e7eb',
-          300: '#d1d5db',
-          400: '#9ca3af',
-          500: '#6b7280',
-          600: '#4b5563',
-          700: '#374151',
-          800: '#1f2937',
-          900: '#111827',
-        },
+        // DevArea Theme - Light mode
         light: {
-          bg: '#F8FAFC',
-          heading: '#111827',
-          text: '#4B5563',
-          border: '#E2E8F0',
+          'bg': '#eeeedf',
+          'card': '#ffffff',
+          'text': '#0f172a',
+          'text-secondary': '#475569',
+          'primary': '#fbbf24',
+          'primary-dark': '#f59e0b',
+          'accent': '#b91c1c',
+          'border': '#e5e7eb',
+        },
+        // DevArea Theme - Dark mode
+        dark: {
+          'bg': '#050505',
+          'card': '#0f172a',
+          'text': '#ffffff',
+          'text-secondary': '#cbd5e1',
+          'primary': '#fbbf24',
+          'primary-dark': '#f59e0b',
+          'accent': '#dc2626',
+          'border': '#1e293b',
+        },
+        // Service colors (no purple)
+        services: {
+          webdev: '#ea580c',  // orange/red
+          appdev: '#2563eb',  // blue
+          marketing: '#059669', // green
+          ai: '#db2777',      // pink
         },
       },
       fontFamily: {

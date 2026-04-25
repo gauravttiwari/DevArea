@@ -25,10 +25,10 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const baseStyles = 'font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2'
 
     const variants = {
-      primary: 'bg-indigo-600 text-white hover:bg-indigo-700 active:scale-95 shadow-lg hover:shadow-xl',
-      secondary: 'border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-50',
-      ghost: 'text-light-heading hover:text-indigo-600',
-      outline: 'border-2 border-light-border text-light-heading hover:border-indigo-600 hover:text-indigo-600',
+      primary: 'bg-amber-400 text-black hover:bg-amber-500 dark:bg-amber-400 dark:text-black dark:hover:bg-amber-500 active:scale-95 shadow-lg hover:shadow-xl dark:hover:shadow-amber-500/30',
+      secondary: 'border-2 border-amber-400 text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-500/10 dark:border-amber-400',
+      ghost: 'text-light-heading dark:text-white hover:text-amber-600 dark:hover:text-amber-400',
+      outline: 'border-2 border-light-border dark:border-white/10 text-light-heading dark:text-white hover:border-amber-600 hover:text-amber-600 dark:hover:border-amber-400 dark:hover:text-amber-400',
     }
 
     const sizes = {
