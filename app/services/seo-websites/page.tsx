@@ -2,13 +2,13 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Check, Eye, Users, Palette } from 'lucide-react'
-import { SERVICES, TESTIMONIALS, PRICING } from '@/lib/constants'
+import { Check, TrendingUp, Zap, Target } from 'lucide-react'
+import { SERVICES } from '@/lib/constants'
 import { generateServiceSchema } from '@/lib/schema'
 
-const service = SERVICES.find(s => s.id === 'uiux-design')
+const service = SERVICES.find(s => s.id === 'seo-websites')
 
-export default function UIUXDesign() {
+export default function SEOWebsites() {
   const schema = generateServiceSchema(service!)
 
   return (
@@ -26,31 +26,31 @@ export default function UIUXDesign() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-purple-600 dark:text-purple-400 font-semibold uppercase tracking-widest mb-4">UI/UX Design</p>
+            <p className="text-green-600 dark:text-green-400 font-semibold uppercase tracking-widest mb-4">SEO Optimization</p>
             <h1 className="text-5xl sm:text-6xl font-bold text-light-text dark:text-dark-text mb-6 leading-tight">
-              Beautiful Design That
-              <span className="bg-gradient-to-r from-purple-600 dark:from-purple-400 to-pink-600 dark:to-pink-400 bg-clip-text text-transparent"> Converts</span>
+              SEO-Optimized
+              <span className="bg-gradient-to-r from-green-600 dark:from-green-400 to-emerald-600 dark:to-emerald-400 bg-clip-text text-transparent"> Websites</span>
             </h1>
             <p className="text-lg sm:text-xl text-light-text dark:text-dark-text mb-8 max-w-2xl leading-relaxed opacity-90">
-              We create stunning, user-centered designs that not only look beautiful but drive engagement, satisfaction, and business results.
+              Websites built for search visibility. From technical SEO to content optimization, we ensure your site ranks and attracts qualified organic traffic.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/40 transition-all"
+                  className="px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-green-500/40 transition-all"
                 >
-                  Get Design Consultation
+                  Boost Your Rankings
                 </motion.button>
               </Link>
               <Link href="/portfolio">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-purple-600 dark:border-purple-400 text-purple-600 dark:text-purple-400 rounded-lg font-semibold hover:bg-purple-50 dark:hover:bg-purple-950/20 transition-all"
+                  className="px-8 py-4 border-2 border-green-600 dark:border-green-400 text-green-600 dark:text-green-400 rounded-lg font-semibold hover:bg-green-50 dark:hover:bg-green-950/20 transition-all"
                 >
-                  View Design Portfolio
+                  View Results
                 </motion.button>
               </Link>
             </div>
@@ -58,7 +58,7 @@ export default function UIUXDesign() {
         </div>
       </section>
 
-      {/* Design Process Section */}
+      {/* Benefits Section */}
       <section className="w-full py-16 sm:py-24 px-4 bg-white dark:bg-[#0a0a0a] transition-colors duration-500">
         <div className="max-w-5xl mx-auto">
           <motion.h2
@@ -68,43 +68,43 @@ export default function UIUXDesign() {
             transition={{ duration: 0.6 }}
             className="text-4xl font-bold text-light-text dark:text-dark-text mb-12 text-center"
           >
-            Our Design Approach
+            SEO Excellence
           </motion.h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: Eye,
-                title: 'Research & Discovery',
-                description: 'We conduct in-depth user research, competitor analysis, and market study to inform our designs.'
+                icon: TrendingUp,
+                title: 'Organic Traffic Growth',
+                description: 'Proven strategies to increase your website visibility and attract qualified organic visitors.'
               },
               {
-                icon: Users,
-                title: 'User-Centered Design',
-                description: 'Every design decision is backed by user testing, feedback, and usability best practices.'
+                icon: Target,
+                title: 'Keyword Research',
+                description: 'Data-driven keyword targeting aligned with your business goals and customer search behavior.'
               },
               {
-                icon: Palette,
-                title: 'Visual Excellence',
-                description: 'We create stunning visuals that align with your brand identity and captivate your audience.'
+                icon: Zap,
+                title: 'Technical SEO',
+                description: 'Site speed optimization, mobile-first indexing, structured data, and crawlability improvements.'
               },
               {
                 icon: Check,
-                title: 'Conversion Optimization',
-                description: 'Designs are optimized for conversions with strategic CTAs, information hierarchy, and user flow.'
+                title: 'Content Strategy',
+                description: 'SEO-optimized content that ranks and converts, addressing customer search intent.'
               },
-            ].map((item, i) => (
+            ].map((benefit, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-lg p-8 hover:border-purple-500/50 dark:hover:border-purple-500/50 transition-all"
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="p-6 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800"
               >
-                <item.icon className="w-12 h-12 text-purple-600 dark:text-purple-400 mb-4" />
-                <h3 className="text-xl font-bold text-light-text dark:text-dark-text mb-3">{item.title}</h3>
-                <p className="text-light-text dark:text-dark-text opacity-75">{item.description}</p>
+                <benefit.icon className="w-12 h-12 text-green-600 dark:text-green-400 mb-4" />
+                <h3 className="text-xl font-semibold text-light-text dark:text-dark-text mb-2">{benefit.title}</h3>
+                <p className="text-light-text dark:text-dark-text opacity-75">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -112,7 +112,7 @@ export default function UIUXDesign() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-16 sm:py-24 px-4 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-900 dark:to-pink-900">
+      <section className="w-full py-16 sm:py-24 px-4 bg-gradient-to-r from-green-600 to-emerald-600 dark:from-green-900 dark:to-emerald-900">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -120,15 +120,15 @@ export default function UIUXDesign() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Ready to Create Beautiful Designs?</h2>
-            <p className="text-xl text-white/90 mb-8">Let's design an experience that captivates and converts</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Ready to Dominate Search Results?</h2>
+            <p className="text-xl text-white/90 mb-8">Let's improve your visibility and organic traffic</p>
             <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-purple-600 dark:text-purple-400 rounded-lg font-semibold hover:shadow-lg transition-all"
+                className="px-8 py-4 bg-white text-green-600 dark:text-green-400 rounded-lg font-semibold hover:shadow-lg transition-all"
               >
-                Get Started Today
+                Get Started
               </motion.button>
             </Link>
           </motion.div>

@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Check, Star, TrendingUp, Zap, Shield, Code2, Palette, MessageCircle } from 'lucide-react'
+import { ArrowRight, Check, Star, TrendingUp, Zap, Shield, Code2, Palette, MessageCircle, ShoppingCart, RefreshCw, Wrench } from 'lucide-react'
 import { BRAND, SERVICES, TESTIMONIALS, CASE_STUDIES, FAQ, PRICING, BLOG_POSTS } from '@/lib/constants'
 import { generateOrganizationSchema, generateFAQSchema } from '@/lib/schema'
 
@@ -13,6 +13,20 @@ export default function Home() {
 
   return (
     <>
+      {/* Global Dark Mode Styles */}
+      <style>{`
+        :root { 
+          --color-services-bg: #eeeedf;
+          --color-heading: #000000;
+          --color-text: #475569;
+        }
+        html.dark { 
+          --color-services-bg: #000000;
+          --color-heading: #fcd34d;
+          --color-text: #cbd5e1;
+        }
+      `}</style>
+
       {/* Schema */}
       <script
         type="application/ld+json"
@@ -111,120 +125,98 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Services Section */}
-        <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-light-bg dark:bg-dark-bg">
-          <div className="max-w-7xl mx-auto">
+        {/* Services Section - "What We Deliver" */}
+        <section 
+          className="w-full py-16 sm:py-24 lg:py-32 px-4 transition-colors duration-500"
+          style={{
+            backgroundColor: 'var(--color-services-bg, #eeeedf)',
+          }}
+        >
+          <div className="max-w-6xl mx-auto">
+            {/* Section Header */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="mb-16"
+              className="text-center mb-16 sm:mb-20"
             >
-              <h2 className="text-4xl sm:text-5xl font-bold text-light-text dark:text-white mb-4">
-                Our Services
+              <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 transition-colors duration-300" style={{color: 'var(--color-heading, #000000)'}}>
+                What We Deliver
               </h2>
-              <p className="text-lg text-light-text-secondary dark:text-dark-text-secondary max-w-2xl">
-                End-to-end digital solutions designed to help businesses grow online
+              <p className="text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed transition-colors duration-300" style={{color: 'var(--color-text, #475569)'}}>
+                From strategy to code, design to delivery, DevArea brings your ideas to life through design, technology, and creativity that actually performs.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-              {/* Web Development */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8 }}
-              >
-                <Link href="/services#web-development">
-                  <div className="group h-full p-8 bg-white dark:bg-dark-card rounded-2xl border border-light-border dark:border-dark-border hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden relative">
-                    <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-orange-500 to-red-600 opacity-5 rounded-full group-hover:opacity-10 transition-opacity" />
-                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
-                      <Code2 className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-light-text dark:text-white mb-3">Web Development</h3>
-                    <p className="text-light-text-secondary dark:text-dark-text-secondary mb-4 leading-relaxed">Custom websites built with modern technology, responsive design, and conversion optimization</p>
-                    <div className="flex items-center text-orange-600 dark:text-orange-400 font-semibold group-hover:translate-x-2 transition-transform">
-                      <span>Learn More</span>
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+            {/* Services Grid - All 8 Services */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+              {SERVICES.map((service, index) => {
+                // Service color mapping for card backgrounds
+                const colorMap: { [key: string]: { start: string; end: string; icon: React.ReactNode } } = {
+                  'web-development': { start: '#2563eb', end: '#1e3a8a', icon: <Code2 className="w-7 h-7 text-white" /> },
+                  'uiux-design': { start: '#a855f7', end: '#6d28d9', icon: <Palette className="w-7 h-7 text-white" /> },
+                  'landing-pages': { start: '#ec4899', end: '#be185d', icon: <Zap className="w-7 h-7 text-white" /> },
+                  'ecommerce': { start: '#f97316', end: '#c2410c', icon: <ShoppingCart className="w-7 h-7 text-white" /> },
+                  'seo-websites': { start: '#16a34a', end: '#15803d', icon: <TrendingUp className="w-7 h-7 text-white" /> },
+                  'ai-chatbot': { start: '#0891b2', end: '#0e7490', icon: <MessageCircle className="w-7 h-7 text-white" /> },
+                  'website-redesign': { start: '#7c3aed', end: '#5b21b6', icon: <RefreshCw className="w-7 h-7 text-white" /> },
+                  'maintenance': { start: '#64748b', end: '#475569', icon: <Wrench className="w-7 h-7 text-white" /> },
+                }
 
-              {/* UI/UX Design */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8 }}
-              >
-                <Link href="/services#uiux-design">
-                  <div className="group h-full p-8 bg-white dark:bg-dark-card rounded-2xl border border-light-border dark:border-dark-border hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden relative">
-                    <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-blue-500 to-blue-600 opacity-5 rounded-full group-hover:opacity-10 transition-opacity" />
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
-                      <Palette className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-light-text dark:text-white mb-3">UI/UX Design</h3>
-                    <p className="text-light-text-secondary dark:text-dark-text-secondary mb-4 leading-relaxed">Beautiful, user-centered interfaces that improve engagement and drive conversions</p>
-                    <div className="flex items-center text-blue-600 dark:text-blue-400 font-semibold group-hover:translate-x-2 transition-transform">
-                      <span>Learn More</span>
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+                const colors = colorMap[service.id] || colorMap['web-development']
 
-              {/* Landing Pages */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8 }}
-              >
-                <Link href="/services#landing-pages">
-                  <div className="group h-full p-8 bg-white dark:bg-dark-card rounded-2xl border border-light-border dark:border-dark-border hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden relative">
-                    <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-green-500 to-emerald-600 opacity-5 rounded-full group-hover:opacity-10 transition-opacity" />
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
-                      <Zap className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-light-text dark:text-white mb-3">Landing Pages</h3>
-                    <p className="text-light-text-secondary dark:text-dark-text-secondary mb-4 leading-relaxed">High-converting landing pages designed to capture leads and drive specific actions</p>
-                    <div className="flex items-center text-green-600 dark:text-green-400 font-semibold group-hover:translate-x-2 transition-transform">
-                      <span>Learn More</span>
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+                return (
+                  <motion.div
+                    key={service.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.05 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -6 }}
+                  >
+                    <Link href={service.href}>
+                      <div
+                        className="group h-full p-6 sm:p-7 rounded-[20px] shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden relative"
+                        style={{
+                          background: `linear-gradient(135deg, ${colors.start} 0%, ${colors.end} 100%)`,
+                        }}
+                      >
+                        {/* Decorative Background */}
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-16 -mt-16 group-hover:opacity-10 transition-opacity" />
+                        <div className="absolute bottom-0 left-0 w-24 h-24 bg-black opacity-10 rounded-full -ml-12 -mb-12 group-hover:opacity-20 transition-opacity" />
 
-              {/* AI Chatbot */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8 }}
-              >
-                <Link href="/services#ai-chatbot">
-                  <div className="group h-full p-8 bg-white dark:bg-dark-card rounded-2xl border border-light-border dark:border-dark-border hover:shadow-2xl transition-all duration-300 cursor-pointer overflow-hidden relative">
-                    <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-pink-500 to-rose-600 opacity-5 rounded-full group-hover:opacity-10 transition-opacity" />
-                    <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
-                      <MessageCircle className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-light-text dark:text-white mb-3">AI Chatbot</h3>
-                    <p className="text-light-text-secondary dark:text-dark-text-secondary mb-4 leading-relaxed">Smart AI-powered chatbots for 24/7 customer support and lead qualification</p>
-                    <div className="flex items-center text-pink-600 dark:text-pink-400 font-semibold group-hover:translate-x-2 transition-transform">
-                      <span>Learn More</span>
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+                        {/* Content */}
+                        <div className="relative z-10">
+                          {/* Icon and Arrow */}
+                          <div className="flex justify-between items-start mb-4">
+                            <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                              {colors.icon}
+                            </div>
+                            <ArrowRight className="w-5 h-5 text-white opacity-60 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
+                          </div>
+
+                          {/* Title */}
+                          <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
+                            {service.title}
+                          </h3>
+
+                          {/* Description */}
+                          <p className="text-white/90 text-sm leading-relaxed mb-4">
+                            {service.description}
+                          </p>
+
+                          {/* Explore Button */}
+                          <button className="inline-flex items-center gap-1.5 px-4 py-2 bg-white/20 hover:bg-white/30 text-white font-medium text-sm rounded-lg transition-all duration-200 group/btn">
+                            Learn More
+                            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
+                          </button>
+                        </div>
+                      </div>
+                    </Link>
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         </section>

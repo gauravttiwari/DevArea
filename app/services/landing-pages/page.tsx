@@ -2,13 +2,13 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Check, Eye, Users, Palette } from 'lucide-react'
-import { SERVICES, TESTIMONIALS, PRICING } from '@/lib/constants'
+import { Check, Zap, BarChart3, Target } from 'lucide-react'
+import { SERVICES } from '@/lib/constants'
 import { generateServiceSchema } from '@/lib/schema'
 
-const service = SERVICES.find(s => s.id === 'uiux-design')
+const service = SERVICES.find(s => s.id === 'landing-pages')
 
-export default function UIUXDesign() {
+export default function LandingPages() {
   const schema = generateServiceSchema(service!)
 
   return (
@@ -26,31 +26,31 @@ export default function UIUXDesign() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-purple-600 dark:text-purple-400 font-semibold uppercase tracking-widest mb-4">UI/UX Design</p>
+            <p className="text-red-600 dark:text-red-400 font-semibold uppercase tracking-widest mb-4">Landing Pages</p>
             <h1 className="text-5xl sm:text-6xl font-bold text-light-text dark:text-dark-text mb-6 leading-tight">
-              Beautiful Design That
-              <span className="bg-gradient-to-r from-purple-600 dark:from-purple-400 to-pink-600 dark:to-pink-400 bg-clip-text text-transparent"> Converts</span>
+              High-Converting
+              <span className="bg-gradient-to-r from-red-600 dark:from-red-400 to-pink-600 dark:to-pink-400 bg-clip-text text-transparent"> Landing Pages</span>
             </h1>
             <p className="text-lg sm:text-xl text-light-text dark:text-dark-text mb-8 max-w-2xl leading-relaxed opacity-90">
-              We create stunning, user-centered designs that not only look beautiful but drive engagement, satisfaction, and business results.
+              Custom landing pages designed and built to convert visitors into customers. Every element optimized for maximum engagement and ROI.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/40 transition-all"
+                  className="px-8 py-4 bg-gradient-to-r from-red-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-red-500/40 transition-all"
                 >
-                  Get Design Consultation
+                  Start Your Project
                 </motion.button>
               </Link>
               <Link href="/portfolio">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-purple-600 dark:border-purple-400 text-purple-600 dark:text-purple-400 rounded-lg font-semibold hover:bg-purple-50 dark:hover:bg-purple-950/20 transition-all"
+                  className="px-8 py-4 border-2 border-red-600 dark:border-red-400 text-red-600 dark:text-red-400 rounded-lg font-semibold hover:bg-red-50 dark:hover:bg-red-950/20 transition-all"
                 >
-                  View Design Portfolio
+                  View Our Portfolio
                 </motion.button>
               </Link>
             </div>
@@ -58,7 +58,7 @@ export default function UIUXDesign() {
         </div>
       </section>
 
-      {/* Design Process Section */}
+      {/* Benefits Section */}
       <section className="w-full py-16 sm:py-24 px-4 bg-white dark:bg-[#0a0a0a] transition-colors duration-500">
         <div className="max-w-5xl mx-auto">
           <motion.h2
@@ -68,43 +68,43 @@ export default function UIUXDesign() {
             transition={{ duration: 0.6 }}
             className="text-4xl font-bold text-light-text dark:text-dark-text mb-12 text-center"
           >
-            Our Design Approach
+            Why Our Landing Pages Convert
           </motion.h2>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: Eye,
-                title: 'Research & Discovery',
-                description: 'We conduct in-depth user research, competitor analysis, and market study to inform our designs.'
+                icon: Target,
+                title: 'Conversion-First Design',
+                description: 'Every design decision is data-driven and focused on turning visitors into leads or customers.'
               },
               {
-                icon: Users,
-                title: 'User-Centered Design',
-                description: 'Every design decision is backed by user testing, feedback, and usability best practices.'
+                icon: Zap,
+                title: 'Lightning-Fast Loading',
+                description: 'Optimized for speed with minimal scripts, lazy loading, and CDN delivery for maximum performance.'
               },
               {
-                icon: Palette,
-                title: 'Visual Excellence',
-                description: 'We create stunning visuals that align with your brand identity and captivate your audience.'
+                icon: BarChart3,
+                title: 'Analytics & Tracking',
+                description: 'Built-in conversion tracking, A/B testing, and detailed analytics to measure and improve performance.'
               },
               {
                 icon: Check,
-                title: 'Conversion Optimization',
-                description: 'Designs are optimized for conversions with strategic CTAs, information hierarchy, and user flow.'
+                title: 'Mobile-First Responsive',
+                description: 'Perfect on all devices with mobile-optimized forms, fast checkout, and touch-friendly interactions.'
               },
-            ].map((item, i) => (
+            ].map((benefit, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-lg p-8 hover:border-purple-500/50 dark:hover:border-purple-500/50 transition-all"
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="p-6 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800"
               >
-                <item.icon className="w-12 h-12 text-purple-600 dark:text-purple-400 mb-4" />
-                <h3 className="text-xl font-bold text-light-text dark:text-dark-text mb-3">{item.title}</h3>
-                <p className="text-light-text dark:text-dark-text opacity-75">{item.description}</p>
+                <benefit.icon className="w-12 h-12 text-red-600 dark:text-red-400 mb-4" />
+                <h3 className="text-xl font-semibold text-light-text dark:text-dark-text mb-2">{benefit.title}</h3>
+                <p className="text-light-text dark:text-dark-text opacity-75">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -112,7 +112,7 @@ export default function UIUXDesign() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-16 sm:py-24 px-4 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-900 dark:to-pink-900">
+      <section className="w-full py-16 sm:py-24 px-4 bg-gradient-to-r from-red-600 to-pink-600 dark:from-red-900 dark:to-pink-900">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -120,13 +120,13 @@ export default function UIUXDesign() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Ready to Create Beautiful Designs?</h2>
-            <p className="text-xl text-white/90 mb-8">Let's design an experience that captivates and converts</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Ready to Convert More Visitors?</h2>
+            <p className="text-xl text-white/90 mb-8">Let's build a landing page that drives results</p>
             <Link href="/contact">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-purple-600 dark:text-purple-400 rounded-lg font-semibold hover:shadow-lg transition-all"
+                className="px-8 py-4 bg-white text-red-600 dark:text-red-400 rounded-lg font-semibold hover:shadow-lg transition-all"
               >
                 Get Started Today
               </motion.button>

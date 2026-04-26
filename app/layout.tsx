@@ -55,11 +55,29 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
+      suppressHydrationWarning
     >
       <head>
         <meta name="theme-color" content="#F8FAFC" />
+        {/* Ensure theme is applied before React hydration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const theme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const isDark = theme === 'dark' || (!theme && prefersDark);
+                if (isDark) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
       </head>
-      <body className="min-h-screen flex flex-col bg-light-bg dark:bg-black text-light-heading dark:text-white">
+      <body className="min-h-screen flex flex-col bg-light-bg dark:bg-[#000000] text-light-heading dark:text-white transition-colors duration-500">
         <ThemeProvider>
           <Navbar />
           <main className="flex-1 pt-20">{children}</main>

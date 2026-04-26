@@ -10,20 +10,22 @@ export const Footer = () => {
   return (
     <>
       <style>{`
-        .footer-light {
+        footer {
           background: linear-gradient(to right, #fffdf2, #fff7cc, #fef3c7);
+          transition: background 300ms ease;
         }
         
-        .dark .footer-dark-bg {
+        html.dark footer {
           background: 
             radial-gradient(circle at 80% 20%, rgba(255,140,0,0.25), transparent 40%),
             radial-gradient(circle at 20% 80%, rgba(255,80,0,0.22), transparent 40%),
-            linear-gradient(to right, #000000, #1a0b00, #000000) !important;
+            linear-gradient(to right, #000000, #1a0b00, #000000);
         }
       `}</style>
       
       <footer 
-        className="footer-light dark:footer-dark-bg relative text-[#0f172a] dark:text-white px-6 md:px-20 py-16 mt-20 transition-colors duration-300"
+        className="relative px-6 md:px-20 py-16 mt-20 transition-colors duration-300 
+        text-[#0f172a] dark:text-white"
       >
         {/* Main Footer Grid */}
         <div className="max-w-7xl mx-auto relative z-10">

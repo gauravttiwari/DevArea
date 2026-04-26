@@ -19,19 +19,19 @@ export default function WebDevelopment() {
       />
 
       {/* Hero Section */}
-      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 pt-32 bg-gradient-to-br from-light-bg via-white to-light-bg">
+      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 pt-32 bg-light-bg dark:bg-dark-bg transition-colors duration-500">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-indigo-600 font-semibold uppercase tracking-widest mb-4">Web Development</p>
-            <h1 className="text-5xl sm:text-6xl font-bold text-light-heading mb-6 leading-tight">
+            <p className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase tracking-widest mb-4">Web Development</p>
+            <h1 className="text-5xl sm:text-6xl font-bold text-light-text dark:text-dark-text mb-6 leading-tight">
               High-Performance Custom
-              <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent"> Web Development</span>
+              <span className="bg-gradient-to-r from-indigo-600 dark:from-indigo-400 to-purple-600 dark:to-purple-400 bg-clip-text text-transparent"> Web Development</span>
             </h1>
-            <p className="text-xl text-light-text mb-8 max-w-2xl leading-relaxed">
+            <p className="text-lg sm:text-xl text-light-text dark:text-dark-text mb-8 max-w-2xl leading-relaxed opacity-90">
               We build scalable, high-performance websites and web applications tailored to your business needs. From concept to deployment, we're with you every step of the way.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -48,7 +48,7 @@ export default function WebDevelopment() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-indigo-600 text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 transition-all"
+                  className="px-8 py-4 border-2 border-indigo-600 dark:border-indigo-400 text-indigo-600 dark:text-indigo-400 rounded-lg font-semibold hover:bg-indigo-50 dark:hover:bg-indigo-950/20 transition-all"
                 >
                   View Our Portfolio
                 </motion.button>
@@ -59,14 +59,14 @@ export default function WebDevelopment() {
       </section>
 
       {/* Benefits Section */}
-      <section className="w-full py-16 sm:py-24 px-4 bg-light-bg">
+      <section className="w-full py-16 sm:py-24 px-4 bg-white dark:bg-[#0a0a0a] transition-colors duration-500">
         <div className="max-w-5xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-light-heading mb-12 text-center"
+            className="text-4xl font-bold text-light-text dark:text-dark-text mb-12 text-center"
           >
             Why Choose Our Web Development Services?
           </motion.h2>
