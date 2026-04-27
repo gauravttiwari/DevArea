@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -18,7 +18,7 @@ export default function Pricing() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#fbbf24] to-[#dc2626] bg-clip-text text-transparent">
                 Simple, Transparent Pricing
               </span>
             </h1>
@@ -42,12 +42,12 @@ export default function Pricing() {
                 viewport={{ once: true }}
                 className={`relative p-8 rounded-xl border transition-all duration-300 flex flex-col ${
                   plan.popular
-                    ? 'border-indigo-300 bg-gradient-to-br from-indigo-50 to-purple-50 ring-2 ring-indigo-200 scale-105 md:scale-100'
+                    ? 'border-amber-300 bg-gradient-to-br from-amber-50 to-orange-50 ring-2 ring-amber-200 scale-105 md:scale-100'
                     : 'border-light-border bg-gradient-to-br from-white to-gray-50'
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-indigo-600 to-purple-600 px-4 py-1 rounded-full text-sm font-semibold text-white">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] px-4 py-1 rounded-full text-sm font-semibold text-white">
                     Most Popular
                   </div>
                 )}
@@ -62,7 +62,7 @@ export default function Pricing() {
                       <p className="text-light-text text-sm">{plan.period}</p>
                     </>
                   ) : (
-                    <div className="text-2xl font-bold text-indigo-600">Custom Quote</div>
+                    <div className="text-2xl font-bold text-[#b91c1c]">Custom Quote</div>
                   )}
                 </div>
 
@@ -81,8 +81,8 @@ export default function Pricing() {
                     whileTap={{ scale: 0.98 }}
                     className={`w-full py-3 rounded-lg font-semibold transition-all ${
                       plan.popular
-                        ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:shadow-lg hover:shadow-indigo-500/40'
-                        : 'border-2 border-indigo-500 text-indigo-600 hover:bg-indigo-50'
+                        ? 'bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white hover:shadow-lg hover:shadow-[#b91c1c]/40'
+                        : 'border-2 border-[#f59e0b] text-[#b91c1c] hover:bg-amber-50'
                     }`}
                   >
                     {plan.cta}
@@ -98,7 +98,7 @@ export default function Pricing() {
       <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-light-bg">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center text-light-heading">
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#dc2626] to-[#f59e0b] bg-clip-text text-transparent">
               Frequently Asked Questions
             </span>
           </h2>
@@ -116,7 +116,7 @@ export default function Pricing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="p-6 bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-200 rounded-xl"
+                className="p-6 bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-xl"
               >
                 <h3 className="text-lg font-bold text-light-heading mb-3">{faq.q}</h3>
                 <p className="text-light-text">{faq.a}</p>
@@ -127,7 +127,7 @@ export default function Pricing() {
       </section>
 
       {/* CTA */}
-      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-gradient-to-r from-indigo-50 to-purple-50 border-y border-indigo-200">
+      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-gradient-to-r from-amber-50 to-orange-50 border-y border-amber-200">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6 text-light-heading">Ready to start?</h2>
           <p className="text-xl text-light-text mb-8">Let's discuss your project and find the perfect package for your needs.</p>
@@ -135,7 +135,7 @@ export default function Pricing() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-indigo-500/40 transition-all inline-flex items-center gap-2"
+              className="px-8 py-4 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-[#b91c1c]/40 transition-all inline-flex items-center gap-2"
             >
               Get in Touch <ArrowRight className="w-5 h-5" />
             </motion.button>
@@ -145,3 +145,4 @@ export default function Pricing() {
     </main>
   )
 }
+

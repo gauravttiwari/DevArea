@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
@@ -7,6 +7,17 @@ import { ArrowRight, Briefcase, Award, Users } from 'lucide-react';
 import FilterTabs from '@/components/sections/FilterTabs';
 import ProjectCard from '@/components/sections/ProjectCard';
 import CaseStudySection from '@/components/sections/CaseStudySection';
+
+type CaseStudy = {
+  title: string;
+  category: string;
+  challenge: string;
+  solution: string;
+  results: { label: string; value: string }[];
+  image: string;
+  imagePosition: 'left' | 'right';
+  slug: string;
+};
 
 // Project data
 const projects = [
@@ -109,7 +120,7 @@ const projects = [
 ];
 
 // Case studies data
-const caseStudies = [
+const caseStudies: CaseStudy[] = [
   {
     title: 'TechStartup Website Redesign',
     category: 'Web Development',
@@ -201,19 +212,19 @@ export default function PortfolioPage() {
               className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto"
             >
               <div className="p-4 bg-white rounded-xl border border-light-border">
-                <div className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <div className="text-3xl font-bold bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
                   50+
                 </div>
                 <div className="text-light-text text-sm mt-1">Projects Delivered</div>
               </div>
               <div className="p-4 bg-white rounded-xl border border-light-border">
-                <div className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <div className="text-3xl font-bold bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
                   40+
                 </div>
                 <div className="text-light-text text-sm mt-1">Happy Clients</div>
               </div>
               <div className="p-4 bg-white rounded-xl border border-light-border">
-                <div className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <div className="text-3xl font-bold bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
                   5+ Yrs
                 </div>
                 <div className="text-light-text text-sm mt-1">Industry Experience</div>
@@ -265,7 +276,7 @@ export default function PortfolioPage() {
       </section>
 
       {/* Featured Case Studies */}
-      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-indigo-600/2 border-y border-indigo-500/20">
+      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-[#f59e0b]/5 border-y border-[#f59e0b]/20">
         <div className="max-w-6xl mx-auto mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -275,7 +286,7 @@ export default function PortfolioPage() {
             className="text-center"
           >
             <h2 className="text-5xl lg:text-6xl font-serif font-bold text-light-heading mb-4">
-              Featured <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Case Studies</span>
+              Featured <span className="bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">Case Studies</span>
             </h2>
             <p className="text-xl text-light-text max-w-2xl mx-auto">
               In-depth looks at our most impactful projects and the strategies that drove success
@@ -303,7 +314,7 @@ export default function PortfolioPage() {
             className="space-y-8"
           >
             <h2 className="text-5xl sm:text-6xl font-serif font-bold text-light-heading">
-              Ready to Create Your <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">Success Story?</span>
+              Ready to Create Your <span className="bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">Success Story?</span>
             </h2>
             <p className="text-xl text-light-text max-w-2xl mx-auto">
               Let's work together to transform your digital vision into measurable results. Whether you need a website redesign, a new application, or digital marketing strategy, we're here to help.
@@ -315,7 +326,7 @@ export default function PortfolioPage() {
                 href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2"
+                className="px-8 py-4 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white font-bold rounded-lg hover:shadow-lg transition-all flex items-center justify-center gap-2"
               >
                 Start Your Project
                 <ArrowRight className="w-5 h-5" />
@@ -324,7 +335,7 @@ export default function PortfolioPage() {
                 href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border-2 border-indigo-600 text-indigo-600 font-bold rounded-lg hover:bg-indigo-600/10 transition-all"
+                className="px-8 py-4 border-2 border-amber-600 text-[#b91c1c] font-bold rounded-lg hover:bg-amber-600/10 transition-all"
               >
                 Get a Free Consultation
               </motion.a>
@@ -335,3 +346,4 @@ export default function PortfolioPage() {
     </main>
   );
 }
+

@@ -21,7 +21,7 @@ export default function BlogPost({ params }: BlogPostProps) {
       <div className="min-h-screen flex items-center justify-center pt-32">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Post not found</h1>
-          <Link href="/blog" className="text-indigo-400 hover:text-indigo-300">
+          <Link href="/blog" className="text-amber-400 hover:text-amber-300">
             Back to blog
           </Link>
         </div>
@@ -49,7 +49,7 @@ export default function BlogPost({ params }: BlogPostProps) {
         {/* Article Header */}
         <article className="w-full">
           {/* Hero Image */}
-          <div className="w-full h-96 sm:h-[500px] bg-gradient-to-br from-indigo-100 to-purple-100 border-b border-indigo-300 overflow-hidden relative pt-32">
+          <div className="w-full h-96 sm:h-[500px] bg-gradient-to-br from-amber-100 to-orange-100 border-b border-amber-300 overflow-hidden relative pt-32">
             <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent" />
           </div>
 
@@ -63,7 +63,7 @@ export default function BlogPost({ params }: BlogPostProps) {
                 transition={{ duration: 0.6 }}
                 className="mb-8 pb-8 border-b border-light-border"
               >
-                  <div className="inline-block text-sm text-indigo-600 font-semibold mb-4 uppercase tracking-wider bg-indigo-100 px-3 py-1 rounded-full">
+                  <div className="inline-block text-sm text-amber-600 font-semibold mb-4 uppercase tracking-wider bg-amber-100 px-3 py-1 rounded-full">
                   {post.category}
                 </div>
 
@@ -71,15 +71,15 @@ export default function BlogPost({ params }: BlogPostProps) {
 
                 <div className="flex flex-wrap gap-6 text-light-text text-sm">
                   <div className="flex items-center gap-2">
-                    <User className="w-4 h-4 text-indigo-600" />
+                    <User className="w-4 h-4 text-amber-600" />
                     By {post.author}
                   </div>
                   <div className="flex items-center gap-2">
-                    <CalendarDays className="w-4 h-4 text-indigo-600" />
+                    <CalendarDays className="w-4 h-4 text-amber-600" />
                     {formatDate(post.publishedAt)}
                   </div>
                   <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-indigo-400" />
+                    <Clock className="w-4 h-4 text-amber-400" />
                     {post.readTime} min read
                   </div>
                 </div>
@@ -103,7 +103,7 @@ export default function BlogPost({ params }: BlogPostProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="mt-12 p-8 bg-gradient-to-r from-indigo-600/10 to-purple-600/10 border border-indigo-500/30 rounded-xl"
+                className="mt-12 p-8 bg-gradient-to-r from-amber-600/10 to-orange-600/10 border border-amber-500/30 rounded-xl"
               >
                 <h3 className="text-2xl font-bold text-white mb-3">Ready to transform your business?</h3>
                 <p className="text-light-text mb-6">Let's discuss how DevArea can help you build a website that drives results.</p>
@@ -111,7 +111,7 @@ export default function BlogPost({ params }: BlogPostProps) {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-indigo-500/40 transition-all inline-flex items-center gap-2"
+                    className="px-6 py-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-amber-500/40 transition-all inline-flex items-center gap-2"
                   >
                     Get Started <ArrowRight className="w-5 h-5" />
                   </motion.button>
@@ -137,17 +137,17 @@ export default function BlogPost({ params }: BlogPostProps) {
                     viewport={{ once: true }}
                   >
                     <Link href={`/blog/${relatedPost.slug}`}>
-                      <div className="group bg-gradient-to-br from-dark-800 to-dark-900 border border-white/10 rounded-xl overflow-hidden hover:border-indigo-500/50 transition-all hover:shadow-xl hover:shadow-indigo-500/10 cursor-pointer">
-                        <div className="aspect-video bg-gradient-to-br from-indigo-600/20 to-purple-600/20 overflow-hidden relative">
+                      <div className="group bg-gradient-to-br from-dark-800 to-dark-900 border border-white/10 rounded-xl overflow-hidden hover:border-amber-500/50 transition-all hover:shadow-xl hover:shadow-amber-500/10 cursor-pointer">
+                        <div className="aspect-video bg-gradient-to-br from-amber-600/20 to-orange-600/20 overflow-hidden relative">
                           <div className="absolute inset-0 bg-gradient-to-t from-dark-950 to-transparent" />
                         </div>
 
                         <div className="p-6">
-                          <div className="text-sm text-indigo-400 font-semibold mb-2 uppercase tracking-wider">
+                          <div className="text-sm text-amber-400 font-semibold mb-2 uppercase tracking-wider">
                             {relatedPost.category}
                           </div>
 
-                          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">
+                          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">
                             {relatedPost.title}
                           </h3>
 
@@ -155,7 +155,7 @@ export default function BlogPost({ params }: BlogPostProps) {
                             {relatedPost.excerpt}
                           </p>
 
-                          <div className="flex items-center text-indigo-400 font-semibold text-sm">
+                          <div className="flex items-center text-amber-400 font-semibold text-sm">
                             Read More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                           </div>
                         </div>
@@ -170,7 +170,7 @@ export default function BlogPost({ params }: BlogPostProps) {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-8 py-3 border-2 border-indigo-500 text-indigo-400 rounded-lg font-semibold hover:bg-indigo-500/10 transition-all inline-flex items-center gap-2"
+                    className="px-8 py-3 border-2 border-amber-500 text-amber-400 rounded-lg font-semibold hover:bg-amber-500/10 transition-all inline-flex items-center gap-2"
                   >
                     View All Articles <ArrowRight className="w-5 h-5" />
                   </motion.button>

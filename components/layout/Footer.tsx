@@ -1,10 +1,12 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Mail, Phone } from 'lucide-react'
 import { BRAND } from '@/lib/constants'
 
 export const Footer = () => {
+  const logoSrc = '/images/logo1.png'
   const currentYear = new Date().getFullYear()
 
   return (
@@ -33,9 +35,15 @@ export const Footer = () => {
             
             {/* LEFT - Brand & Social */}
             <div>
-              <h2 className="text-2xl font-bold text-[#b91c1c] dark:text-[#fbbf24] mb-4 transition-colors">
-                {BRAND.name}
-              </h2>
+              <Link href="/" className="inline-flex mb-4">
+                <Image
+                  src={logoSrc}
+                  alt="DevArea"
+                  width={180}
+                  height={52}
+                  className="h-10 w-auto object-contain"
+                />
+              </Link>
               <p className="text-gray-700 dark:text-slate-300 text-sm leading-relaxed mb-6 transition-colors">
                 Transforming businesses through innovative digital solutions. We craft exceptional experiences that drive growth and inspire success.
               </p>

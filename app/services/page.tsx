@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import {
@@ -153,8 +153,8 @@ const pricingPlans = [
   {
     name: 'Starter',
     subtitle: 'Perfect for small projects',
-    price: '₹12,999',
-    originalPrice: '₹16,000',
+    price: 'â‚¹12,999',
+    originalPrice: 'â‚¹16,000',
     description: '5 Pages Website',
     features: [
       'Responsive Design',
@@ -169,8 +169,8 @@ const pricingPlans = [
   {
     name: 'Growth',
     subtitle: 'For growing businesses',
-    price: '₹24,999',
-    originalPrice: '₹30,000',
+    price: 'â‚¹24,999',
+    originalPrice: 'â‚¹30,000',
     description: '12 Pages Website',
     features: [
       'Mobile-Optimized',
@@ -186,8 +186,8 @@ const pricingPlans = [
   {
     name: 'Ecommerce',
     subtitle: 'For online stores',
-    price: '₹34,999',
-    originalPrice: '₹42,000',
+    price: 'â‚¹34,999',
+    originalPrice: 'â‚¹42,000',
     description: '20 Pages Website',
     features: [
       'Product Management',
@@ -203,7 +203,7 @@ const pricingPlans = [
   {
     name: 'Custom',
     subtitle: 'For enterprise needs',
-    price: '₹????',
+    price: 'â‚¹????',
     description: 'Tailored Solution',
     features: [
       'Custom Features',
@@ -264,7 +264,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-light-heading mb-6 leading-tight">
-              Our <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Our <span className="bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
                 Services
               </span>
             </h1>
@@ -276,15 +276,15 @@ export default function ServicesPage() {
             {/* Trust Indicators */}
             <div className="flex flex-wrap justify-center gap-6 mb-8">
               <div className="flex items-center gap-2 text-light-text">
-                <CheckCircle className="w-5 h-5 text-indigo-600" />
+                <CheckCircle className="w-5 h-5 text-[#b91c1c]" />
                 <span className="text-sm font-semibold">Mobile-First Design</span>
               </div>
               <div className="flex items-center gap-2 text-light-text">
-                <CheckCircle className="w-5 h-5 text-indigo-600" />
+                <CheckCircle className="w-5 h-5 text-[#b91c1c]" />
                 <span className="text-sm font-semibold">SEO Ready</span>
               </div>
               <div className="flex items-center gap-2 text-light-text">
-                <CheckCircle className="w-5 h-5 text-indigo-600" />
+                <CheckCircle className="w-5 h-5 text-[#b91c1c]" />
                 <span className="text-sm font-semibold">Fast Delivery</span>
               </div>
             </div>
@@ -295,7 +295,7 @@ export default function ServicesPage() {
                 href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-lg hover:shadow-lg transition-all duration-300"
+                className="px-8 py-3 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white font-bold rounded-lg hover:shadow-lg transition-all duration-300"
               >
                 Get Started
               </motion.a>
@@ -303,7 +303,7 @@ export default function ServicesPage() {
                 href="/portfolio"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 border-2 border-indigo-600 text-indigo-600 font-bold rounded-lg hover:bg-indigo-600/10 transition-all duration-300"
+                className="px-8 py-3 border-2 border-amber-600 text-[#b91c1c] font-bold rounded-lg hover:bg-amber-600/10 transition-all duration-300"
               >
                 View Portfolio
               </motion.a>
@@ -313,7 +313,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Overview Grid */}
-      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-indigo-600/2">
+      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-[#f59e0b]/5">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -323,7 +323,7 @@ export default function ServicesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-light-heading mb-4">
-              What We <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              What We <span className="bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
                 Offer
               </span>
             </h2>
@@ -357,13 +357,13 @@ export default function ServicesPage() {
         ctaHref="/contact?service=web-development"
         imageLeft={false}
       >
-        <div className="relative w-full h-96 bg-gradient-to-br from-indigo-600/10 to-purple-600/10 rounded-xl border border-indigo-500/20 flex items-center justify-center group">
+        <div className="relative w-full h-96 bg-gradient-to-br from-[#b91c1c]/10 to-[#f59e0b]/10 rounded-xl border border-[#f59e0b]/20 flex items-center justify-center group">
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 3, repeat: Infinity }}
             className="text-center"
           >
-            <Code2 className="w-24 h-24 text-indigo-600 mx-auto mb-4" />
+            <Code2 className="w-24 h-24 text-[#b91c1c] mx-auto mb-4" />
             <p className="text-light-heading font-semibold">Web Development</p>
           </motion.div>
         </div>
@@ -380,7 +380,7 @@ export default function ServicesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-light-heading mb-4">
-              Why Choose <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Why Choose <span className="bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
                 Us
               </span>
             </h2>
@@ -398,7 +398,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Our Process */}
-      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-indigo-600/2">
+      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-[#f59e0b]/5">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -408,7 +408,7 @@ export default function ServicesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-light-heading mb-4">
-              Our <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Our <span className="bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
                 Process
               </span>
             </h2>
@@ -455,7 +455,7 @@ export default function ServicesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-light-heading mb-4">
-              Transparent <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Transparent <span className="bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
                 Pricing
               </span>
             </h2>
@@ -481,11 +481,11 @@ export default function ServicesPage() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="mt-12 p-6 bg-indigo-600/5 border border-indigo-500/20 rounded-xl text-center"
+            className="mt-12 p-6 bg-amber-600/5 border border-[#f59e0b]/20 rounded-xl text-center"
           >
             <p className="text-light-text">
               All plans include free domain name, SSL certificate, and 1 year of free hosting. Need a custom solution?{' '}
-              <Link href="/contact" className="text-indigo-600 font-semibold hover:underline">
+              <Link href="/contact" className="text-[#b91c1c] font-semibold hover:underline">
                 Get in touch with our team
               </Link>
             </p>
@@ -494,7 +494,7 @@ export default function ServicesPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-indigo-600/2">
+      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-[#f59e0b]/5">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -504,7 +504,7 @@ export default function ServicesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl sm:text-5xl font-bold text-light-heading mb-4">
-              Frequently Asked <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Frequently Asked <span className="bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
                 Questions
               </span>
             </h2>
@@ -522,7 +522,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-gradient-to-r from-indigo-600/10 to-purple-600/10 border-y border-indigo-500/30">
+      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-gradient-to-r from-[#b91c1c]/10 to-[#f59e0b]/10 border-y border-[#f59e0b]/30">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -530,7 +530,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
               Ready to transform your digital presence?
             </h2>
             <p className="text-xl text-light-text mb-8 max-w-2xl mx-auto">
@@ -541,7 +541,7 @@ export default function ServicesPage() {
                 href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-lg hover:shadow-lg transition-all duration-300"
+                className="px-8 py-3 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white font-bold rounded-lg hover:shadow-lg transition-all duration-300"
               >
                 Get Quote
               </motion.a>
@@ -549,7 +549,7 @@ export default function ServicesPage() {
                 href="tel:+919876543210"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 border-2 border-indigo-600 text-indigo-600 font-bold rounded-lg hover:bg-indigo-600/10 transition-all duration-300"
+                className="px-8 py-3 border-2 border-amber-600 text-[#b91c1c] font-bold rounded-lg hover:bg-amber-600/10 transition-all duration-300"
               >
                 Book Call
               </motion.a>
@@ -560,3 +560,5 @@ export default function ServicesPage() {
     </main>
   );
 }
+
+

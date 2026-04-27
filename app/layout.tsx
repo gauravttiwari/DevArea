@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -54,28 +55,38 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <head>
         <meta name="theme-color" content="#F8FAFC" />
         {/* Ensure theme is applied before React hydration */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                const theme = localStorage.getItem('theme');
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const isDark = theme === 'dark' || (!theme && prefersDark);
-                if (isDark) {
-                  document.documentElement.classList.add('dark');
-                } else {
-                  document.documentElement.classList.remove('dark');
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`
+            try {
+              const rawTheme = localStorage.getItem('theme');
+              let theme = rawTheme;
+              if (rawTheme && (rawTheme.startsWith('"') || rawTheme.startsWith("'"))) {
+                try {
+                  theme = JSON.parse(rawTheme);
+                } catch {
+                  theme = rawTheme;
                 }
-              } catch (e) {}
-            `,
-          }}
-        />
+              }
+              if (theme !== 'light' && theme !== 'dark') {
+                theme = null;
+              }
+              const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+              const isDark = theme === 'dark' || (!theme && prefersDark);
+              if (isDark) {
+                document.documentElement.classList.add('dark');
+              } else {
+                document.documentElement.classList.remove('dark');
+              }
+            } catch (e) {}
+          `}
+        </Script>
       </head>
       <body className="min-h-screen flex flex-col bg-light-bg dark:bg-[#000000] text-light-heading dark:text-white transition-colors duration-500">
         <ThemeProvider>

@@ -3,35 +3,38 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Check, Code, Zap, Users } from 'lucide-react'
-import { SERVICES, TESTIMONIALS, PRICING } from '@/lib/constants'
+import { SERVICES, PRICING } from '@/lib/constants'
 import { generateServiceSchema } from '@/lib/schema'
+import { useTheme } from '@/components/providers/ThemeProvider'
 
 const service = SERVICES.find(s => s.id === 'web-development')
 
 export default function WebDevelopment() {
   const schema = generateServiceSchema(service!)
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
 
   return (
-    <main className="flex flex-col w-full">
+    <main className={`flex flex-col w-full transition-colors duration-500 ${isDark ? 'bg-[#050505]' : 'bg-[#eeeedf]'}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
       {/* Hero Section */}
-      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 pt-32 bg-light-bg dark:bg-dark-bg transition-colors duration-500">
+      <section className={`w-full py-12 sm:py-20 lg:py-32 px-4 pt-32 transition-colors duration-500 ${isDark ? 'bg-[#050505]' : 'bg-[#eeeedf]'}`}>
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-indigo-600 dark:text-indigo-400 font-semibold uppercase tracking-widest mb-4">Web Development</p>
-            <h1 className="text-5xl sm:text-6xl font-bold text-light-text dark:text-dark-text mb-6 leading-tight">
+            <p className="text-[#b91c1c] dark:text-[#fbbf24] font-semibold uppercase tracking-widest mb-4">Web Development</p>
+            <h1 className={`text-5xl sm:text-6xl font-bold mb-6 leading-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
               High-Performance Custom
-              <span className="bg-gradient-to-r from-indigo-600 dark:from-indigo-400 to-purple-600 dark:to-purple-400 bg-clip-text text-transparent"> Web Development</span>
+              <span className="bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] dark:from-[#fbbf24] dark:to-[#dc2626] bg-clip-text text-transparent"> Web Development</span>
             </h1>
-            <p className="text-lg sm:text-xl text-light-text dark:text-dark-text mb-8 max-w-2xl leading-relaxed opacity-90">
+            <p className={`text-lg sm:text-xl mb-8 max-w-2xl leading-relaxed opacity-90 ${isDark ? 'text-slate-200' : 'text-slate-700'}`}>
               We build scalable, high-performance websites and web applications tailored to your business needs. From concept to deployment, we're with you every step of the way.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -39,7 +42,7 @@ export default function WebDevelopment() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-indigo-500/40 transition-all"
+                  className="px-8 py-4 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-[#b91c1c]/30 transition-all"
                 >
                   Start Your Project
                 </motion.button>
@@ -48,7 +51,7 @@ export default function WebDevelopment() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-indigo-600 dark:border-indigo-400 text-indigo-600 dark:text-indigo-400 rounded-lg font-semibold hover:bg-indigo-50 dark:hover:bg-indigo-950/20 transition-all"
+                  className="px-8 py-4 border-2 border-[#b91c1c] dark:border-[#fbbf24] text-[#b91c1c] dark:text-[#fbbf24] rounded-lg font-semibold hover:bg-red-50 dark:hover:bg-yellow-950/20 transition-all"
                 >
                   View Our Portfolio
                 </motion.button>
@@ -59,14 +62,14 @@ export default function WebDevelopment() {
       </section>
 
       {/* Benefits Section */}
-      <section className="w-full py-16 sm:py-24 px-4 bg-white dark:bg-[#0a0a0a] transition-colors duration-500">
+      <section className={`w-full py-16 sm:py-24 px-4 transition-colors duration-500 ${isDark ? 'bg-[#050505]' : 'bg-[#f8f8ef]'}`}>
         <div className="max-w-5xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-light-text dark:text-dark-text mb-12 text-center"
+            className={`text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-slate-900'}`}
           >
             Why Choose Our Web Development Services?
           </motion.h2>
@@ -100,11 +103,11 @@ export default function WebDevelopment() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-dark-900/50 border border-indigo-500/20 rounded-lg p-8 hover:border-indigo-500/50 transition-all"
+                className={`border border-[#f59e0b]/30 rounded-lg p-8 hover:border-[#b91c1c]/60 transition-all ${isDark ? 'bg-[#0f172a]' : 'bg-white'}`}
               >
-                <benefit.icon className="w-12 h-12 text-indigo-400 mb-4" />
-                <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                <p className="text-light-text">{benefit.description}</p>
+                <benefit.icon className={`w-12 h-12 mb-4 ${isDark ? 'text-[#fbbf24]' : 'text-[#b91c1c]'}`} />
+                <h3 className={`text-xl font-bold mb-3 ${isDark ? 'text-white' : 'text-slate-900'}`}>{benefit.title}</h3>
+                <p className={`${isDark ? 'text-slate-300' : 'text-slate-600'}`}>{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -112,14 +115,14 @@ export default function WebDevelopment() {
       </section>
 
       {/* Process Section */}
-      <section className="w-full py-16 sm:py-24 px-4 bg-dark-900/50">
+      <section className={`w-full py-16 sm:py-24 px-4 transition-colors duration-500 ${isDark ? 'bg-[#0a0a0a]' : 'bg-white'}`}>
         <div className="max-w-5xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-white mb-12 text-center"
+            className={`text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-slate-900'}`}
           >
             Our Development Process
           </motion.h2>
@@ -139,12 +142,12 @@ export default function WebDevelopment() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="flex gap-6 items-start"
               >
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] flex items-center justify-center flex-shrink-0">
                   <span className="text-white font-bold">{item.step}</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-light-text">{item.desc}</p>
+                  <h3 className={`text-xl font-bold mb-2 ${isDark ? 'text-white' : 'text-slate-900'}`}>{item.title}</h3>
+                  <p className={`${isDark ? 'text-slate-300' : 'text-slate-600'}`}>{item.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -153,14 +156,14 @@ export default function WebDevelopment() {
       </section>
 
       {/* Pricing Section */}
-      <section className="w-full py-16 sm:py-24 px-4">
+      <section className={`w-full py-16 sm:py-24 px-4 transition-colors duration-500 ${isDark ? 'bg-[#050505]' : 'bg-[#eeeedf]'}`}>
         <div className="max-w-5xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-white mb-12 text-center"
+            className={`text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-slate-900'}`}
           >
             Pricing Options
           </motion.h2>
@@ -175,26 +178,26 @@ export default function WebDevelopment() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className={`rounded-lg p-8 border-2 transition-all ${
                   plan.popular
-                    ? 'border-indigo-500 bg-dark-900/50 scale-105 md:scale-105'
-                    : 'border-gray-700 bg-dark-900/30'
+                    ? `${isDark ? 'bg-[#0f172a]' : 'bg-white'} border-[#f59e0b] scale-105 md:scale-105 shadow-lg shadow-[#b91c1c]/20`
+                    : `${isDark ? 'bg-[#0f172a] border-slate-700' : 'bg-white border-slate-300'}`
                 }`}
               >
                 {plan.popular && (
-                  <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full w-fit mb-4">
+                  <div className="bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white text-xs font-bold px-3 py-1 rounded-full w-fit mb-4">
                     Most Popular
                   </div>
                 )}
-                <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                <p className="text-light-text mb-6">{plan.description}</p>
-                <div className="text-4xl font-bold text-white mb-6">${plan.price}</div>
+                <h3 className={`text-2xl font-bold mb-2 ${isDark ? 'text-white' : 'text-slate-900'}`}>{plan.name}</h3>
+                <p className={`mb-6 ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>{plan.description}</p>
+                <div className={`text-4xl font-bold mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}>${plan.price}</div>
                 <Link href="/contact">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className={`w-full py-3 rounded-lg font-semibold transition-all mb-6 ${
                       plan.popular
-                        ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white'
-                        : 'border-2 border-indigo-500 text-indigo-300 hover:bg-indigo-500/10'
+                        ? 'bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white'
+                        : `${isDark ? 'text-[#fbbf24]' : 'text-[#b91c1c]'} border-2 border-[#f59e0b] hover:bg-[#f59e0b]/10`
                     }`}
                   >
                     Get Started
@@ -207,25 +210,25 @@ export default function WebDevelopment() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-16 sm:py-24 px-4 bg-gradient-to-r from-indigo-600/20 to-purple-600/20">
+      <section className="w-full py-16 sm:py-24 px-4 bg-gradient-to-r from-[#f59e0b]/15 to-[#b91c1c]/15">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl font-bold text-white mb-6"
+            className={`text-4xl font-bold mb-6 ${isDark ? 'text-white' : 'text-slate-900'}`}
           >
             Ready to Build Something Amazing?
           </motion.h2>
-          <p className="text-xl text-light-text mb-8">
+          <p className={`text-xl mb-8 ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
             Let's discuss your project and create a custom solution that drives real results.
           </p>
           <Link href="/contact">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-12 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-indigo-500/40 transition-all"
+              className="px-12 py-4 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-[#b91c1c]/30 transition-all"
             >
               Schedule a Consultation
             </motion.button>

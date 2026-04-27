@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -152,11 +152,11 @@ export default function AboutPage() {
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-light-heading mb-4 leading-tight">
                 Get to Know Us
               </h1>
-              <p className="text-xl text-indigo-600 font-script italic mb-6">
+              <p className="text-xl text-[#b91c1c] font-script italic mb-6">
                 The Team Behind WeInsightians
               </p>
               <p className="text-xl text-light-text mb-8 leading-relaxed">
-                We're not just developers – we're storytellers, designers, and digital growth partners dedicated to helping businesses thrive online.
+                We're not just developers â€“ we're storytellers, designers, and digital growth partners dedicated to helping businesses thrive online.
               </p>
 
               {/* CTA Buttons */}
@@ -165,7 +165,7 @@ export default function AboutPage() {
                   href="/contact"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-lg hover:shadow-lg transition-all"
+                  className="px-8 py-3 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white font-bold rounded-lg hover:shadow-lg transition-all"
                 >
                   Start a Project
                 </motion.a>
@@ -173,7 +173,7 @@ export default function AboutPage() {
                   href="/contact"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 border-2 border-indigo-600 text-indigo-600 font-bold rounded-lg hover:bg-indigo-600/10 transition-all"
+                  className="px-8 py-3 border-2 border-amber-600 text-[#b91c1c] font-bold rounded-lg hover:bg-amber-600/10 transition-all"
                 >
                   Contact Us
                 </motion.a>
@@ -201,7 +201,7 @@ export default function AboutPage() {
       </section>
 
       {/* Highlights Strip */}
-      <section className="w-full py-12 px-4 bg-indigo-600/2 border-y border-indigo-500/20">
+      <section className="w-full py-12 px-4 bg-[#f59e0b]/5 border-y border-[#f59e0b]/20">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {highlights.map((highlight, index) => (
@@ -223,11 +223,11 @@ export default function AboutPage() {
             <h2 className="text-5xl lg:text-6xl font-serif font-bold text-light-heading mb-4 text-center">
               Our Story
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mb-12" />
+            <div className="w-24 h-1 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] mx-auto mb-12" />
 
             <div className="space-y-6 text-lg text-light-text leading-relaxed">
               <p>
-                <span className="font-bold text-light-heading">WeInsightians began with just two friends and a shared vision.</span> It all started in a small college room, where long conversations about technology, business, and the future slowly turned into something bigger. What began as curiosity soon became a passion — a desire to create something meaningful in the digital space.
+                <span className="font-bold text-light-heading">WeInsightians began with just two friends and a shared vision.</span> It all started in a small college room, where long conversations about technology, business, and the future slowly turned into something bigger. What began as curiosity soon became a passion â€” a desire to create something meaningful in the digital space.
               </p>
 
               <p>
@@ -235,19 +235,19 @@ export default function AboutPage() {
               </p>
 
               <p>
-                With nothing more than our laptops, skills, and determination, we started building. The early days were not easy — balancing studies, late-night coding sessions, and client work pushed us constantly. We made mistakes, learned quickly, and improved with every project. Each small win gave us more confidence, and slowly, our work began to speak for itself.
+                With nothing more than our laptops, skills, and determination, we started building. The early days were not easy â€” balancing studies, late-night coding sessions, and client work pushed us constantly. We made mistakes, learned quickly, and improved with every project. Each small win gave us more confidence, and slowly, our work began to speak for itself.
               </p>
 
               <p>
-                <span className="font-bold text-light-heading">What started as two friends working on small projects has now grown into something much bigger.</span> Businesses started trusting us — not just to build websites, but to create experiences that help them grow, connect, and stand out online.
+                <span className="font-bold text-light-heading">What started as two friends working on small projects has now grown into something much bigger.</span> Businesses started trusting us â€” not just to build websites, but to create experiences that help them grow, connect, and stand out online.
               </p>
 
               <p>
-                Today, <span className="font-bold text-light-heading">WeInsightians is more than just a digital agency.</span> It represents our journey, our mindset, and our commitment to building impactful digital solutions. From simple websites to complete digital experiences, our focus remains the same — helping businesses turn ideas into reality.
+                Today, <span className="font-bold text-light-heading">WeInsightians is more than just a digital agency.</span> It represents our journey, our mindset, and our commitment to building impactful digital solutions. From simple websites to complete digital experiences, our focus remains the same â€” helping businesses turn ideas into reality.
               </p>
 
               <p>
-                And this is just the beginning. We continue to learn, evolve, and push our limits every day. <span className="font-bold">Because we believe that every great journey starts with a simple idea — and the courage to build it.</span>
+                And this is just the beginning. We continue to learn, evolve, and push our limits every day. <span className="font-bold">Because we believe that every great journey starts with a simple idea â€” and the courage to build it.</span>
               </p>
             </div>
           </motion.div>
@@ -255,7 +255,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission, Vision, Values */}
-      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-indigo-600/2">
+      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-[#f59e0b]/5">
         <div className="max-w-7xl mx-auto">
           <motion.h2
             initial={{ opacity: 0 }}
@@ -264,7 +264,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-4xl sm:text-5xl font-bold text-center text-light-heading mb-16"
           >
-            Our <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            Our <span className="bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
               Mission, Vision & Values
             </span>
           </motion.h2>
@@ -287,7 +287,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-4xl sm:text-5xl font-bold text-center text-light-heading mb-16"
           >
-            Why Clients Choose <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            Why Clients Choose <span className="bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
               Us
             </span>
           </motion.h2>
@@ -301,7 +301,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-indigo-600/2">
+      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-[#f59e0b]/5">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -336,7 +336,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-4xl sm:text-5xl font-bold text-center text-light-heading mb-16"
           >
-            Our <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            Our <span className="bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
               Impact
             </span>
           </motion.h2>
@@ -350,7 +350,7 @@ export default function AboutPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-gradient-to-r from-indigo-600/10 to-purple-600/10 border-y border-indigo-500/30">
+      <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-gradient-to-r from-[#b91c1c]/10 to-[#f59e0b]/10 border-y border-[#f59e0b]/30">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -359,7 +359,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-light-heading">
-              Let's Build Something <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Let's Build Something <span className="bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
                 Amazing
               </span>
             </h2>
@@ -372,7 +372,7 @@ export default function AboutPage() {
                 href="/contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-bold rounded-lg hover:shadow-lg transition-all"
+                className="px-8 py-3 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white font-bold rounded-lg hover:shadow-lg transition-all"
               >
                 Start Project
               </motion.a>
@@ -380,7 +380,7 @@ export default function AboutPage() {
                 href="tel:+919876543210"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 border-2 border-indigo-600 text-indigo-600 font-bold rounded-lg hover:bg-indigo-600/10 transition-all"
+                className="px-8 py-3 border-2 border-amber-600 text-[#b91c1c] font-bold rounded-lg hover:bg-amber-600/10 transition-all"
               >
                 Call Us
               </motion.a>
@@ -391,3 +391,4 @@ export default function AboutPage() {
     </main>
   );
 }
+

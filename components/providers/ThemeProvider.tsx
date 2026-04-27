@@ -4,6 +4,22 @@ import React, { createContext, useContext, useEffect, useState, useCallback, use
 
 type Theme = 'light' | 'dark'
 
+const normalizeTheme = (raw: string | null): Theme | null => {
+  if (!raw) return null
+
+  // Handle accidentally JSON-stringified values like '"dark"'.
+  let parsed = raw
+  if (raw.startsWith('"') || raw.startsWith("'")) {
+    try {
+      parsed = JSON.parse(raw)
+    } catch {
+      parsed = raw
+    }
+  }
+
+  return parsed === 'dark' || parsed === 'light' ? parsed : null
+}
+
 interface ThemeContextType {
   theme: Theme
   toggleTheme: () => void
@@ -19,7 +35,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   // Load theme from localStorage on mount
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') as Theme | null
+    const savedTheme = normalizeTheme(localStorage.getItem('theme'))
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light')
 

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -26,10 +26,10 @@ export default function UIUXDesign() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-purple-600 dark:text-purple-400 font-semibold uppercase tracking-widest mb-4">UI/UX Design</p>
+            <p className="text-orange-600 dark:text-orange-400 font-semibold uppercase tracking-widest mb-4">UI/UX Design</p>
             <h1 className="text-5xl sm:text-6xl font-bold text-light-text dark:text-dark-text mb-6 leading-tight">
               Beautiful Design That
-              <span className="bg-gradient-to-r from-purple-600 dark:from-purple-400 to-pink-600 dark:to-pink-400 bg-clip-text text-transparent"> Converts</span>
+              <span className="bg-gradient-to-r from-orange-600 dark:from-[#dc2626] to-[#f59e0b] dark:to-[#f59e0b] bg-clip-text text-transparent"> Converts</span>
             </h1>
             <p className="text-lg sm:text-xl text-light-text dark:text-dark-text mb-8 max-w-2xl leading-relaxed opacity-90">
               We create stunning, user-centered designs that not only look beautiful but drive engagement, satisfaction, and business results.
@@ -39,7 +39,7 @@ export default function UIUXDesign() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/40 transition-all"
+                  className="px-8 py-4 bg-gradient-to-r from-orange-600 to-[#f59e0b] text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-orange-500/40 transition-all"
                 >
                   Get Design Consultation
                 </motion.button>
@@ -48,7 +48,7 @@ export default function UIUXDesign() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-purple-600 dark:border-purple-400 text-purple-600 dark:text-purple-400 rounded-lg font-semibold hover:bg-purple-50 dark:hover:bg-purple-950/20 transition-all"
+                  className="px-8 py-4 border-2 border-orange-600 dark:border-orange-400 text-orange-600 dark:text-orange-400 rounded-lg font-semibold hover:bg-orange-50 dark:hover:bg-orange-950/20 transition-all"
                 >
                   View Design Portfolio
                 </motion.button>
@@ -100,9 +100,9 @@ export default function UIUXDesign() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-lg p-8 hover:border-purple-500/50 dark:hover:border-purple-500/50 transition-all"
+                className="bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-lg p-8 hover:border-orange-500/50 dark:hover:border-orange-500/50 transition-all"
               >
-                <item.icon className="w-12 h-12 text-purple-600 dark:text-purple-400 mb-4" />
+                <item.icon className="w-12 h-12 text-orange-600 dark:text-orange-400 mb-4" />
                 <h3 className="text-xl font-bold text-light-text dark:text-dark-text mb-3">{item.title}</h3>
                 <p className="text-light-text dark:text-dark-text opacity-75">{item.description}</p>
               </motion.div>
@@ -112,7 +112,7 @@ export default function UIUXDesign() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-16 sm:py-24 px-4 bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-900 dark:to-pink-900">
+      <section className="w-full py-16 sm:py-24 px-4 bg-gradient-to-r from-orange-600 to-[#f59e0b] dark:from-orange-900 dark:to-orange-900">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -126,7 +126,7 @@ export default function UIUXDesign() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-purple-600 dark:text-purple-400 rounded-lg font-semibold hover:shadow-lg transition-all"
+                className="px-8 py-4 bg-white text-orange-600 dark:text-orange-400 rounded-lg font-semibold hover:shadow-lg transition-all"
               >
                 Get Started Today
               </motion.button>
@@ -137,3 +137,4 @@ export default function UIUXDesign() {
     </main>
   )
 }
+

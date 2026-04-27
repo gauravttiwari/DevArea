@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -26,10 +26,10 @@ export default function WebsiteRedesign() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-violet-600 dark:text-violet-400 font-semibold uppercase tracking-widest mb-4">Website Redesign</p>
+            <p className="text-[#b91c1c] dark:text-[#fbbf24] font-semibold uppercase tracking-widest mb-4">Website Redesign</p>
             <h1 className="text-5xl sm:text-6xl font-bold text-light-text dark:text-dark-text mb-6 leading-tight">
               Modernize Your
-              <span className="bg-gradient-to-r from-violet-600 dark:from-violet-400 to-purple-600 dark:to-purple-400 bg-clip-text text-transparent"> Online Presence</span>
+              <span className="bg-gradient-to-r from-[#b91c1c] dark:from-[#fbbf24] to-[#f59e0b] dark:to-[#dc2626] bg-clip-text text-transparent"> Online Presence</span>
             </h1>
             <p className="text-lg sm:text-xl text-light-text dark:text-dark-text mb-8 max-w-2xl leading-relaxed opacity-90">
               Give your website a modern makeover. We refresh designs, improve user experience, and boost conversions while maintaining your brand identity.
@@ -39,7 +39,7 @@ export default function WebsiteRedesign() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-violet-500/40 transition-all"
+                  className="px-8 py-4 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-red-500/40 transition-all"
                 >
                   Start Redesign
                 </motion.button>
@@ -48,7 +48,7 @@ export default function WebsiteRedesign() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 rounded-lg font-semibold hover:bg-violet-50 dark:hover:bg-violet-950/20 transition-all"
+                  className="px-8 py-4 border-2 border-red-600 dark:border-red-400 text-[#b91c1c] dark:text-[#fbbf24] rounded-lg font-semibold hover:bg-red-50 dark:hover:bg-red-950/20 transition-all"
                 >
                   View Before/After
                 </motion.button>
@@ -102,7 +102,7 @@ export default function WebsiteRedesign() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="p-6 rounded-lg bg-gray-50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800"
               >
-                <benefit.icon className="w-12 h-12 text-violet-600 dark:text-violet-400 mb-4" />
+                <benefit.icon className="w-12 h-12 text-[#b91c1c] dark:text-[#fbbf24] mb-4" />
                 <h3 className="text-xl font-semibold text-light-text dark:text-dark-text mb-2">{benefit.title}</h3>
                 <p className="text-light-text dark:text-dark-text opacity-75">{benefit.description}</p>
               </motion.div>
@@ -112,7 +112,7 @@ export default function WebsiteRedesign() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-16 sm:py-24 px-4 bg-gradient-to-r from-violet-600 to-purple-600 dark:from-violet-900 dark:to-purple-900">
+      <section className="w-full py-16 sm:py-24 px-4 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] dark:from-red-900 dark:to-orange-900">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -126,7 +126,7 @@ export default function WebsiteRedesign() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-violet-600 dark:text-violet-400 rounded-lg font-semibold hover:shadow-lg transition-all"
+                className="px-8 py-4 bg-white text-[#b91c1c] dark:text-[#fbbf24] rounded-lg font-semibold hover:shadow-lg transition-all"
               >
                 Get Started Today
               </motion.button>
@@ -137,3 +137,5 @@ export default function WebsiteRedesign() {
     </main>
   )
 }
+
+

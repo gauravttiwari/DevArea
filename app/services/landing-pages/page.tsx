@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -29,7 +29,7 @@ export default function LandingPages() {
             <p className="text-red-600 dark:text-red-400 font-semibold uppercase tracking-widest mb-4">Landing Pages</p>
             <h1 className="text-5xl sm:text-6xl font-bold text-light-text dark:text-dark-text mb-6 leading-tight">
               High-Converting
-              <span className="bg-gradient-to-r from-red-600 dark:from-red-400 to-pink-600 dark:to-pink-400 bg-clip-text text-transparent"> Landing Pages</span>
+              <span className="bg-gradient-to-r from-red-600 dark:from-red-400 to-[#f59e0b] dark:to-[#f59e0b] bg-clip-text text-transparent"> Landing Pages</span>
             </h1>
             <p className="text-lg sm:text-xl text-light-text dark:text-dark-text mb-8 max-w-2xl leading-relaxed opacity-90">
               Custom landing pages designed and built to convert visitors into customers. Every element optimized for maximum engagement and ROI.
@@ -39,7 +39,7 @@ export default function LandingPages() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-red-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-red-500/40 transition-all"
+                  className="px-8 py-4 bg-gradient-to-r from-red-600 to-[#f59e0b] text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-red-500/40 transition-all"
                 >
                   Start Your Project
                 </motion.button>
@@ -112,7 +112,7 @@ export default function LandingPages() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-16 sm:py-24 px-4 bg-gradient-to-r from-red-600 to-pink-600 dark:from-red-900 dark:to-pink-900">
+      <section className="w-full py-16 sm:py-24 px-4 bg-gradient-to-r from-red-600 to-[#f59e0b] dark:from-red-900 dark:to-orange-900">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -137,3 +137,5 @@ export default function LandingPages() {
     </main>
   )
 }
+
+

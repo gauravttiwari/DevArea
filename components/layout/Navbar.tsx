@@ -2,13 +2,15 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X, Send, Sun, Moon, ChevronDown } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { BRAND, NAVIGATION } from '@/lib/constants'
+import { NAVIGATION } from '@/lib/constants'
 import { useTheme } from '@/components/providers/ThemeProvider'
 import { ServicesMegaDropdown } from '@/components/sections/ServicesMegaDropdown'
 
 export const Navbar = () => {
+  const logoSrc = '/images/logo1.png'
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
@@ -95,9 +97,16 @@ export const Navbar = () => {
               <Link href="/" className="flex-shrink-0 group">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
-                  className="text-2xl font-bold bg-gradient-to-r from-yellow-600 to-yellow-500 bg-clip-text text-transparent dark:from-yellow-400 dark:to-yellow-300 group-hover:from-yellow-500 group-hover:to-yellow-600 transition-all"
+                  className="transition-all"
                 >
-                  {BRAND.name}
+                  <Image
+                    src={logoSrc}
+                    alt="DevArea"
+                    width={180}
+                    height={52}
+                    priority
+                    className="h-10 w-auto object-contain"
+                  />
                 </motion.div>
               </Link>
 

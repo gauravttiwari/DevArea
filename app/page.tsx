@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -226,7 +226,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="mb-12 sm:mb-20 text-center">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#fbbf24] to-[#f59e0b] bg-clip-text text-transparent">
                   Why Choose DevArea
                 </span>
               </h2>
@@ -247,10 +247,10 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="p-8 bg-gradient-to-br from-indigo-600/10 to-purple-600/10 border border-indigo-500/30 rounded-xl"
+                  className="p-8 bg-gradient-to-br from-[#b91c1c]/10 to-[#f59e0b]/10 border border-[#f59e0b]/30 rounded-xl"
                 >
-                  <item.icon className="w-12 h-12 text-indigo-400 mb-4" />
-                  <h3 className="text-xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-3">{item.title}</h3>
+                  <item.icon className="w-12 h-12 text-[#fbbf24] mb-4" />
+                  <h3 className="text-xl font-bold bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent mb-3">{item.title}</h3>
                   <p className="text-light-text">{item.description}</p>
                 </motion.div>
               ))}
@@ -263,7 +263,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="mb-12 sm:mb-20 text-center">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#dc2626] to-[#f59e0b] bg-clip-text text-transparent">
                   Loved by Clients
                 </span>
               </h2>
@@ -303,7 +303,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="mb-12 sm:mb-20">
               <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-                <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#fbbf24] to-[#dc2626] bg-clip-text text-transparent">
                   Featured Work
                 </span>
               </h2>
@@ -320,13 +320,13 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group overflow-hidden rounded-xl border border-white/10 hover:border-indigo-500/50 transition-all duration-300"
+                  className="group overflow-hidden rounded-xl border border-white/10 hover:border-[#f59e0b]/50 transition-all duration-300"
                 >
-                  <div className="aspect-video bg-gradient-to-br from-indigo-600/20 to-purple-600/20 overflow-hidden relative">
+                  <div className="aspect-video bg-gradient-to-br from-[#b91c1c]/20 to-[#f59e0b]/20 overflow-hidden relative">
                     <div className="absolute inset-0 bg-gradient-to-t from-dark-950 to-transparent" />
                   </div>
                   <div className="p-6 bg-dark-900">
-                    <div className="text-sm text-indigo-400 mb-2 font-semibold">{study.category}</div>
+                    <div className="text-sm text-[#fbbf24] mb-2 font-semibold">{study.category}</div>
                     <h3 className="text-xl font-bold text-white mb-3">{study.title}</h3>
                     <ul className="space-y-1 text-sm text-light-text">
                       {study.results.slice(0, 2).map((result, i) => (
@@ -346,7 +346,7 @@ export default function Home() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-3 border-2 border-indigo-500 text-indigo-400 rounded-lg font-semibold hover:bg-indigo-500/10 transition-all inline-flex items-center gap-2"
+                  className="px-8 py-3 border-2 border-[#f59e0b] text-[#fbbf24] rounded-lg font-semibold hover:bg-amber-500/10 transition-all inline-flex items-center gap-2"
                 >
                   View All Case Studies <ArrowRight className="w-5 h-5" />
                 </motion.button>
@@ -356,9 +356,9 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-gradient-to-r from-indigo-600/10 to-purple-600/10 border-y border-indigo-500/30">
+        <section className="w-full py-12 sm:py-20 lg:py-32 px-4 bg-gradient-to-r from-[#b91c1c]/10 to-[#f59e0b]/10 border-y border-[#f59e0b]/30">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] bg-clip-text text-transparent">
               Ready to grow your business?
             </h2>
             <p className="text-xl text-light-text mb-8 max-w-2xl mx-auto">
@@ -369,7 +369,7 @@ export default function Home() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-indigo-500/40 transition-all flex items-center justify-center gap-2"
+                  className="px-8 py-4 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-[#b91c1c]/40 transition-all flex items-center justify-center gap-2"
                 >
                   Schedule a Consultation <ArrowRight className="w-5 h-5" />
                 </motion.button>
@@ -378,7 +378,7 @@ export default function Home() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-indigo-500 text-indigo-300 rounded-lg font-semibold hover:bg-indigo-500/10 transition-all"
+                  className="px-8 py-4 border-2 border-[#f59e0b] text-amber-300 rounded-lg font-semibold hover:bg-amber-500/10 transition-all"
                 >
                   View Pricing
                 </motion.button>
@@ -390,3 +390,5 @@ export default function Home() {
     </>
   )
 }
+
+

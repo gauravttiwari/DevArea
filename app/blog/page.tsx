@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -18,7 +18,7 @@ export default function Blog() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#fbbf24] to-[#dc2626] bg-clip-text text-transparent">
                 Our Blog
               </span>
             </h1>
@@ -36,7 +36,7 @@ export default function Blog() {
             <Link href="/blog">
               <motion.button
                 whileHover={{ scale: 1.05 }}
-                className="px-4 py-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full text-sm font-semibold"
+                className="px-4 py-2 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white rounded-full text-sm font-semibold"
               >
                 All Posts
               </motion.button>
@@ -45,7 +45,7 @@ export default function Blog() {
               <Link key={category.id} href={`/blog?category=${category.slug}`}>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
-                  className="px-4 py-2 border-2 border-indigo-300 text-indigo-600 rounded-full text-sm font-semibold hover:border-indigo-500 transition-all"
+                  className="px-4 py-2 border-2 border-amber-300 text-[#b91c1c] rounded-full text-sm font-semibold hover:border-[#f59e0b] transition-all"
                 >
                   {category.name}
                 </motion.button>
@@ -68,19 +68,19 @@ export default function Blog() {
                 viewport={{ once: true }}
               >
                 <Link href={`/blog/${post.slug}`}>
-                  <div className="group h-full bg-gradient-to-br from-white to-gray-50 border border-light-border rounded-xl overflow-hidden hover:border-indigo-400 transition-all hover:shadow-xl hover:shadow-indigo-200 cursor-pointer flex flex-col">
+                  <div className="group h-full bg-gradient-to-br from-white to-gray-50 border border-light-border rounded-xl overflow-hidden hover:border-[#f59e0b] transition-all hover:shadow-xl hover:shadow-amber-200 cursor-pointer flex flex-col">
                     {/* Featured Image */}
-                    <div className="aspect-video bg-gradient-to-br from-indigo-100 to-purple-100 overflow-hidden relative">
+                    <div className="aspect-video bg-gradient-to-br from-amber-100 to-orange-100 overflow-hidden relative">
                       <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent" />
                     </div>
 
                     {/* Content */}
                     <div className="p-6 flex-1 flex flex-col">
-                      <div className="text-sm text-indigo-400 font-semibold mb-2 uppercase tracking-wider">
+                      <div className="text-sm text-[#fbbf24] font-semibold mb-2 uppercase tracking-wider">
                         {post.category}
                       </div>
 
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#fbbf24] transition-colors">
                         {post.title}
                       </h3>
 
@@ -114,3 +114,4 @@ export default function Blog() {
     </main>
   )
 }
+

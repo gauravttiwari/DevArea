@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -13,7 +13,7 @@ export default function NotFound() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-9xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent mb-4">
+          <h1 className="text-9xl font-bold bg-gradient-to-r from-[#fbbf24] to-[#dc2626] bg-clip-text text-transparent mb-4">
             404
           </h1>
           <h2 className="text-4xl font-bold text-light-heading mb-4">Page Not Found</h2>
@@ -26,7 +26,7 @@ export default function NotFound() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-indigo-500/40 transition-all flex items-center justify-center gap-2"
+                className="px-8 py-4 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-[#b91c1c]/40 transition-all flex items-center justify-center gap-2"
               >
                 Back to Home <ArrowRight className="w-5 h-5" />
               </motion.button>
@@ -35,7 +35,7 @@ export default function NotFound() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border-2 border-indigo-500 text-indigo-300 rounded-lg font-semibold hover:bg-indigo-500/10 transition-all"
+                className="px-8 py-4 border-2 border-[#f59e0b] text-amber-300 rounded-lg font-semibold hover:bg-amber-500/10 transition-all"
               >
                 Contact Support
               </motion.button>
@@ -46,3 +46,4 @@ export default function NotFound() {
     </main>
   )
 }
+

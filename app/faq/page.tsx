@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -25,7 +25,7 @@ export default function FAQPage() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#fbbf24] to-[#dc2626] bg-clip-text text-transparent">
                   Frequently Asked Questions
                 </span>
               </h1>
@@ -46,11 +46,11 @@ export default function FAQPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="group p-6 bg-gradient-to-br from-white to-gray-50 border border-light-border rounded-xl hover:border-indigo-400 transition-all cursor-pointer"
+                className="group p-6 bg-gradient-to-br from-white to-gray-50 border border-light-border rounded-xl hover:border-[#f59e0b] transition-all cursor-pointer"
               >
                 <summary className="flex items-center justify-between text-lg font-bold text-light-heading marker:content-none">
                   <span>{faq.question}</span>
-                  <span className="text-2xl text-indigo-600 group-open:rotate-180 transition-transform">+</span>
+                  <span className="text-2xl text-[#b91c1c] group-open:rotate-180 transition-transform">+</span>
                 </summary>
                 <p className="mt-4 text-light-text leading-relaxed">{faq.answer}</p>
               </motion.details>
@@ -67,7 +67,7 @@ export default function FAQPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-indigo-500/40 transition-all inline-flex items-center gap-2"
+                className="px-8 py-4 bg-gradient-to-r from-[#b91c1c] to-[#f59e0b] text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-[#b91c1c]/40 transition-all inline-flex items-center gap-2"
               >
                 Contact Us <ArrowRight className="w-5 h-5" />
               </motion.button>

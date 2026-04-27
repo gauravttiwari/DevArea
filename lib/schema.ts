@@ -97,21 +97,23 @@ export function generateBlogPostSchema(post: {
 }
 
 export function generateServiceSchema(service: {
-  name: string;
+  name?: string;
+  title?: string;
   description: string;
   url?: string;
+  href?: string;
 }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: service.name,
+    name: service.name || service.title || 'Service',
     description: service.description,
     provider: {
       '@type': 'Organization',
       name: BRAND.name,
       url: SEO.baseUrl,
     },
-    url: service.url || SEO.baseUrl,
+    url: service.url || service.href || SEO.baseUrl,
     areaServed: 'US',
   };
 }

@@ -90,7 +90,7 @@ interface ServicesMegaDropdownProps {
 export const ServicesMegaDropdown = ({ isOpen, onClose }: ServicesMegaDropdownProps) => {
   const [activeService, setActiveService] = useState<string | null>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
-  const timeoutRef = useRef<NodeJS.Timeout>()
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const { theme } = useTheme()
 
   const handleMouseLeave = () => {
@@ -139,9 +139,10 @@ export const ServicesMegaDropdown = ({ isOpen, onClose }: ServicesMegaDropdownPr
                       : '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.05)',
                 }}
               >
-                <div className="p-12 lg:p-14">
-                  {/* Grid Layout - 4 Services + See More */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="p-6 sm:p-8 lg:p-10">
+                  {/* Single Row Layout with Smooth Horizontal Scroll */}
+                  <div className="overflow-x-auto overflow-y-hidden scroll-smooth pb-2 [scrollbar-width:thin]">
+                    <div className="flex flex-nowrap gap-6 min-w-max">
                     {/* Show only first 4 services */}
                     {MEGA_DROPDOWN_SERVICES.slice(0, 4).map((service) => (
                       <Link key={service.id} href={service.href}>
@@ -158,7 +159,7 @@ export const ServicesMegaDropdown = ({ isOpen, onClose }: ServicesMegaDropdownPr
                                   : 'rgba(0, 0, 0, 0.02)',
                           }}
                           transition={{ duration: 0.3 }}
-                          className="p-6 rounded-2xl cursor-pointer group transition-all duration-300"
+                          className="w-[260px] p-6 rounded-2xl cursor-pointer group transition-all duration-300 shrink-0"
                           style={{
                             transform: activeService === service.id ? 'translateY(-4px)' : 'translateY(0)',
                           }}
@@ -234,7 +235,7 @@ export const ServicesMegaDropdown = ({ isOpen, onClose }: ServicesMegaDropdownPr
                                 : 'rgba(0, 0, 0, 0.02)',
                         }}
                         transition={{ duration: 0.3 }}
-                        className="p-6 rounded-2xl cursor-pointer group transition-all duration-300 border-2 border-dashed"
+                        className="w-[260px] p-6 rounded-2xl cursor-pointer group transition-all duration-300 border-2 border-dashed shrink-0"
                         style={{
                           borderColor: activeService === 'see-more' 
                             ? theme === 'dark' ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.2)'
@@ -242,7 +243,7 @@ export const ServicesMegaDropdown = ({ isOpen, onClose }: ServicesMegaDropdownPr
                           transform: activeService === 'see-more' ? 'translateY(-4px)' : 'translateY(0)',
                         }}
                       >
-                        <div className="flex flex-col items-center justify-center h-full min-h-[200px] text-center">
+                        <div className="flex flex-col items-center justify-center h-full min-h-[170px] text-center">
                           {/* Icon */}
                           <motion.div
                             animate={{
@@ -303,6 +304,7 @@ export const ServicesMegaDropdown = ({ isOpen, onClose }: ServicesMegaDropdownPr
                         </div>
                       </motion.div>
                     </Link>
+                    </div>
                   </div>
                 </div>
               </motion.div>

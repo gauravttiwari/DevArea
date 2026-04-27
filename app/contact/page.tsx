@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react'
 import Link from 'next/link'
@@ -46,7 +46,7 @@ export default function Contact() {
       {/* Hero Section */}
       <section className="w-full relative pt-32 pb-16 sm:pb-20 lg:pb-28 px-4">
         {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/50 -z-10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-50/50 via-white to-orange-50/50 -z-10" />
 
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
@@ -55,30 +55,30 @@ export default function Contact() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
           >
             <span className="inline-block mb-4 px-4 py-2 bg-green-100/60 text-green-700 rounded-full text-sm font-semibold backdrop-blur-sm">
-              ⚡ Fastest Response on WhatsApp
+              âš¡ Fastest Response on WhatsApp
             </span>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Get Your Business Website in 3–5 Days
+              <span className="bg-gradient-to-r from-[#b91c1c] via-orange-600 to-[#f59e0b] bg-clip-text text-transparent">
+                Get Your Business Website in 3â€“5 Days
               </span>
             </h1>
 
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-2 leading-relaxed font-semibold">
-              Free demo • Starting from ₹2,999 • No upfront payment
+              Free demo â€¢ Starting from â‚¹2,999 â€¢ No upfront payment
             </p>
 
             <p className="text-sm text-gray-500 max-w-xl mx-auto mb-10">
-              💚 We respond within 10–30 minutes on WhatsApp
+              ðŸ’š We respond within 10â€“30 minutes on WhatsApp
             </p>
 
             {/* Trust Badges */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10 max-w-2xl mx-auto">
               {[
-                { icon: '✔', text: 'No upfront payment' },
-                { icon: '✔', text: 'Free demo before payment' },
-                { icon: '✔', text: 'Fast delivery in 3–5 days' },
-                { icon: '✔', text: 'Mobile-friendly design' },
+                { icon: 'âœ”', text: 'No upfront payment' },
+                { icon: 'âœ”', text: 'Free demo before payment' },
+                { icon: 'âœ”', text: 'Fast delivery in 3â€“5 days' },
+                { icon: 'âœ”', text: 'Mobile-friendly design' },
               ].map((badge, index) => (
                 <motion.div
                   key={index}
@@ -141,7 +141,7 @@ export default function Contact() {
               {/* Card Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-white via-white/95 to-gray-50/95 backdrop-blur-xl" />
               <div className="absolute inset-0 border border-white/40 rounded-3xl" />
-              <div className="absolute inset-0 shadow-2xl shadow-indigo-500/10 rounded-3xl" />
+              <div className="absolute inset-0 shadow-2xl shadow-[#b91c1c]/10 rounded-3xl" />
 
               {/* Card Content */}
               <div className="relative p-8 sm:p-10 lg:p-12 flex flex-col h-full">
@@ -176,9 +176,9 @@ export default function Contact() {
                       label: 'Location',
                       value: BRAND.address,
                       href: '#',
-                      color: 'from-purple-500/10 to-pink-500/10',
-                      borderColor: 'border-purple-200/50',
-                      iconColor: 'text-purple-600',
+                      color: 'from-orange-500/10 to-orange-500/10',
+                      borderColor: 'border-orange-200/50',
+                      iconColor: 'text-orange-600',
                     },
                   ].map((contact, index) => (
                     <motion.a
@@ -214,9 +214,9 @@ export default function Contact() {
                   viewport={{ once: true }}
                   className="mt-auto p-6 rounded-2xl bg-gradient-to-br from-green-50/80 to-emerald-50/80 border border-green-200/60 flex-shrink-0"
                 >
-                  <p className="text-sm font-bold text-green-700 mb-2">⚡ Fast Response Guaranteed</p>
+                  <p className="text-sm font-bold text-green-700 mb-2">âš¡ Fast Response Guaranteed</p>
                   <p className="text-xs text-green-700 leading-relaxed">
-                    We respond within 10–30 minutes on WhatsApp. No upfront payment required until
+                    We respond within 10â€“30 minutes on WhatsApp. No upfront payment required until
                     you approve the demo.
                   </p>
                 </motion.div>
@@ -234,7 +234,7 @@ export default function Contact() {
               {/* Card Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-white via-white/95 to-gray-50/95 backdrop-blur-xl" />
               <div className="absolute inset-0 border border-white/40 rounded-3xl" />
-              <div className="absolute inset-0 shadow-2xl shadow-indigo-500/10 rounded-3xl" />
+              <div className="absolute inset-0 shadow-2xl shadow-[#b91c1c]/10 rounded-3xl" />
 
               {/* Card Content */}
               <div className="relative p-8 sm:p-10 lg:p-12 flex flex-col h-full">
@@ -245,7 +245,7 @@ export default function Contact() {
                 {/* Tip Box */}
                 <div className="p-4 bg-green-50/80 border border-green-200/60 rounded-xl mb-8 flex-shrink-0">
                   <p className="text-xs text-green-700 font-medium">
-                    💡 Tip: WhatsApp chat gets you free demo first, payment only after approval.
+                    ðŸ’¡ Tip: WhatsApp chat gets you free demo first, payment only after approval.
                   </p>
                 </div>
 
@@ -263,7 +263,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="John Doe"
-                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl transition-all duration-300 focus:outline-none focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:shadow-lg focus:shadow-indigo-500/10"
+                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl transition-all duration-300 focus:outline-none focus:bg-white focus:border-[#f59e0b] focus:ring-2 focus:ring-amber-500/20 focus:shadow-lg focus:shadow-[#b91c1c]/10"
                     />
                   </div>
 
@@ -279,7 +279,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       placeholder="+91 9876543210"
-                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl transition-all duration-300 focus:outline-none focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:shadow-lg focus:shadow-indigo-500/10"
+                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl transition-all duration-300 focus:outline-none focus:bg-white focus:border-[#f59e0b] focus:ring-2 focus:ring-amber-500/20 focus:shadow-lg focus:shadow-[#b91c1c]/10"
                     />
                   </div>
 
@@ -294,7 +294,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="you@example.com"
-                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl transition-all duration-300 focus:outline-none focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:shadow-lg focus:shadow-indigo-500/10"
+                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl transition-all duration-300 focus:outline-none focus:bg-white focus:border-[#f59e0b] focus:ring-2 focus:ring-amber-500/20 focus:shadow-lg focus:shadow-[#b91c1c]/10"
                     />
                   </div>
 
@@ -307,10 +307,10 @@ export default function Contact() {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl transition-all duration-300 focus:outline-none focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:shadow-lg focus:shadow-indigo-500/10"
+                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl transition-all duration-300 focus:outline-none focus:bg-white focus:border-[#f59e0b] focus:ring-2 focus:ring-amber-500/20 focus:shadow-lg focus:shadow-[#b91c1c]/10"
                     >
                       <option value="">Select a service (optional)</option>
-                      <option value="business-website">Business Website (₹2999)</option>
+                      <option value="business-website">Business Website (â‚¹2999)</option>
                       <option value="landing-pages">Landing Page</option>
                       <option value="ecommerce">E-commerce Store</option>
                       <option value="ui-ux-design">UI/UX Design</option>
@@ -330,7 +330,7 @@ export default function Contact() {
                       required
                       rows={3}
                       placeholder="Describe your business, goals, and any specific requirements..."
-                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl resize-none transition-all duration-300 focus:outline-none focus:bg-white focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 focus:shadow-lg focus:shadow-indigo-500/10"
+                      className="w-full px-4 py-3 bg-white/80 border border-gray-200/60 text-gray-900 placeholder:text-gray-400 rounded-xl resize-none transition-all duration-300 focus:outline-none focus:bg-white focus:border-[#f59e0b] focus:ring-2 focus:ring-amber-500/20 focus:shadow-lg focus:shadow-[#b91c1c]/10"
                     />
                   </div>
                 </form>
@@ -341,7 +341,7 @@ export default function Contact() {
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="w-full py-3.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-indigo-500/30 hover:shadow-2xl hover:shadow-indigo-500/40 flex items-center justify-center gap-2 group"
+                    className="w-full py-3.5 bg-gradient-to-r from-[#b91c1c] via-orange-600 to-[#f59e0b] text-white font-bold rounded-xl transition-all duration-300 shadow-lg shadow-[#b91c1c]/30 hover:shadow-2xl hover:shadow-[#b91c1c]/40 flex items-center justify-center gap-2 group"
                   >
                     <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     Send Details
@@ -362,3 +362,4 @@ export default function Contact() {
     </main>
   )
 }
+
